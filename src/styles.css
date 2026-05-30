@@ -1,0 +1,221 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+  box-sizing: border-box;
+} 
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+@theme inline {
+  /* ─── Typography ──────────────────────────────────────────────── */
+  --font-sans:    'Geist Variable', sans-serif;
+  --font-heading: var(--font-sans);
+  --font-display: Georgia, 'Times New Roman', serif;
+
+  /* ─── Brand palette ───────────────────────────────────────────── */
+  --color-cream:    #FEFAF7;
+  --color-teal:     #154D57;
+  --color-teal-mid: #1d6675;   /* slightly lighter teal for hover states */
+  --color-taupe:    #B7A08B;
+  --color-taupe-lt: #d4c4b4;   /* lighter taupe for borders / dividers   */
+
+  /* ─── Semantic tokens ─────────────────────────────────────────── */
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-popover:           var(--popover);
+  --color-popover-foreground:var(--popover-foreground);
+  --color-primary:           var(--primary);
+  --color-primary-foreground:var(--primary-foreground);
+  --color-secondary:         var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-accent:            var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:       var(--destructive);
+  --color-border:            var(--border);
+  --color-input:             var(--input);
+  --color-ring:              var(--ring);
+
+  /* ─── Radius scale ────────────────────────────────────────────── */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ─── Sidebar tokens (keep for shadcn compat) ─────────────────── */
+  --color-sidebar-ring:               var(--sidebar-ring);
+  --color-sidebar-border:             var(--sidebar-border);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-accent:             var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-sidebar-foreground:         var(--sidebar-foreground);
+  --color-sidebar:                    var(--sidebar);
+
+  /* ─── Chart tokens ────────────────────────────────────────────── */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/* ─── Light mode (always-on — no dark mode for this brand) ─────── */
+:root {
+  /* Core */
+  --background:          #FEFAF7;   /* cream — page canvas               */
+  --foreground:          #000000;   /* black — primary text               */
+
+  /* Card / popover surfaces */
+  --card:                #FFFFFF;   /* white card surfaces                */
+  --card-foreground:     #000000;
+  --popover:             #FFFFFF;
+  --popover-foreground:  #000000;
+
+  /* Primary = teal */
+  --primary:             #154D57;
+  --primary-foreground:  #FEFAF7;
+
+  /* Secondary = taupe */
+  --secondary:           #B7A08B;
+  --secondary-foreground:#000000;
+
+  /* Muted = warm light grey */
+  --muted:               #f0eae3;
+  --muted-foreground:    #6b6057;
+
+  /* Accent = teal tint */
+  --accent:              rgba(21, 77, 87, 0.08);
+  --accent-foreground:   #154D57;
+
+  /* Destructive */
+  --destructive:         oklch(0.577 0.245 27.325);
+
+  /* Borders & inputs — warm cream-tone */
+  --border:              #e4dbd2;
+  --input:               #e4dbd2;
+  --ring:                #154D57;
+
+  /* Charts */
+  --chart-1: #154D57;
+  --chart-2: #B7A08B;
+  --chart-3: #1d6675;
+  --chart-4: #d4c4b4;
+  --chart-5: #6b6057;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Sidebar (maps to brand) */
+  --sidebar:                    #FEFAF7;
+  --sidebar-foreground:         #000000;
+  --sidebar-primary:            #154D57;
+  --sidebar-primary-foreground: #FEFAF7;
+  --sidebar-accent:             rgba(21,77,87,0.08);
+  --sidebar-accent-foreground:  #154D57;
+  --sidebar-border:             #e4dbd2;
+  --sidebar-ring:               #154D57;
+}
+
+/* ─── Dark mode — intentionally mirrors light for this brand ────── */
+/* The palette is light-only; disable dark mode or mirror it. */
+.dark {
+  --background:          #FEFAF7;
+  --foreground:          #000000;
+  --card:                #FFFFFF;
+  --card-foreground:     #000000;
+  --popover:             #FFFFFF;
+  --popover-foreground:  #000000;
+  --primary:             #154D57;
+  --primary-foreground:  #FEFAF7;
+  --secondary:           #B7A08B;
+  --secondary-foreground:#000000;
+  --muted:               #f0eae3;
+  --muted-foreground:    #6b6057;
+  --accent:              rgba(21,77,87,0.08);
+  --accent-foreground:   #154D57;
+  --destructive:         oklch(0.577 0.245 27.325);
+  --border:              #e4dbd2;
+  --input:               #e4dbd2;
+  --ring:                #154D57;
+  --chart-1: #154D57;
+  --chart-2: #B7A08B;
+  --chart-3: #1d6675;
+  --chart-4: #d4c4b4;
+  --chart-5: #6b6057;
+  --sidebar:                    #FEFAF7;
+  --sidebar-foreground:         #000000;
+  --sidebar-primary:            #154D57;
+  --sidebar-primary-foreground: #FEFAF7;
+  --sidebar-accent:             rgba(21,77,87,0.08);
+  --sidebar-accent-foreground:  #154D57;
+  --sidebar-border:             #e4dbd2;
+  --sidebar-ring:               #154D57;
+}
+
+/* ─── Base layer ────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist Variable', sans-serif;
+  }
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─── Utility: marquee animation (used in logo strip) ───────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 36s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Utility: float (used in hero badge) ───────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-8px); }
+}
+.float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ─── Smooth scroll ─────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Selection colour ──────────────────────────────────────────── */
+::selection {
+  background: rgba(21, 77, 87, 0.18);
+  color: #154D57;
+}

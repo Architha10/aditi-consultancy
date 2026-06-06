@@ -3,32 +3,13 @@ import { Layout } from "@/components/site/Layout";
 import hero from "@/assets/hero-architecture.jpg";
 import blueprint from "@/assets/blueprint-bg.jpg";
 import about from "@/assets/team-intro.jpg";
-import pCommercial from "@/assets/projects/jubilee-commercial.jpg";
-import pBrewdog from "@/assets/projects/brewdog-hotel.jpg";
-import pJntu from "@/assets/projects/jntu-library.jpg";
-import pChurch from "@/assets/projects/methodist-church.jpg";
-import pApartment from "@/assets/projects/apartment-kalyannagar.jpg";
-import pSaroor from "@/assets/projects/saroornagar-apartment.jpg";
 import {
   ArrowUpRight,
-  Compass,
-  Building2,
-  HardHat,
-  Ruler,
-  ShieldCheck,
-  Sparkles,
   Award,
   MapPin,
   Users,
 } from "lucide-react";
-
-/* ─── PALETTE
-   cream:   #FEFAF7
-   teal:    #154D57
-   taupe:   #B7A08B
-   white:   #FFFFFF
-   black:   #000000
-──────────────────── */
+import { partners, smallServices, testimonials } from "#/assets/data/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -69,7 +50,7 @@ function Hero() {
         style={{ background: "linear-gradient(to right, #154D57, #B7A08B, transparent)" }}
       />
 
-      <div className="mx-auto max-w-7xl px-8 md:px-14 pt-20 md:pt-28 pb-24 md:pb-36">
+      <div className="mx-auto max-w-7xl px-8 md:px-14 pt-20 md:pt-28 pb-12 md:pb-16">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* LEFT — text */}
@@ -169,9 +150,8 @@ function Hero() {
               {/* Bottom caption */}
               <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between text-white">
                 <div>
-                  <div className="text-[9px] uppercase tracking-[0.3em] opacity-70">Latest On-Going</div>
                   <div style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem" }}>
-                    Brewdog Hotel · Jubilee Hills
+                    Anvaya Villa
                   </div>
                 </div>
                 <div
@@ -181,18 +161,6 @@ function Hero() {
                   <ArrowUpRight size={14} />
                 </div>
               </div>
-            </div>
-
-            {/* Floating stat card — top left */}
-            <div
-              className="absolute -left-6 top-8 rounded-2xl px-5 py-4 shadow-xl hidden md:block"
-              style={{ background: "#FFFFFF", border: "1px solid #e8e0d8" }}
-            >
-              <div className="text-[9px] uppercase tracking-[0.28em]" style={{ color: "#B7A08B" }}>Max Span</div>
-              <div style={{ fontFamily: "Georgia, serif", fontSize: "2.2rem", color: "#154D57", lineHeight: 1.1 }}>
-                63<span style={{ fontSize: "1rem", color: "#B7A08B" }}>ft</span>
-              </div>
-              <div className="text-[10px] mt-0.5" style={{ color: "#9c8c7c" }}>Pillar-to-pillar · Moulali</div>
             </div>
 
             {/* Floating year badge — bottom right */}
@@ -227,6 +195,29 @@ function Hero() {
             </div>
           ))}
         </div>
+
+        {/* Partners / Logos marquee — inside hero */}
+        <div className="mt-10 pt-8 border-t" style={{ borderColor: "#e4dbd2" }}>
+          <div className="mb-7 text-center">
+            <span className="text-[10.5px] uppercase tracking-[0.38em]" style={{ color: "#154D57" }}>
+              Trusted by leading builders & architects
+            </span>
+          </div>
+          <div style={{ maskImage: "linear-gradient(to right, transparent, #000 10%, #000 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, #000 10%, #000 90%, transparent)", overflow: "hidden" }}>
+            <div className="flex gap-10 marquee w-max">
+              {[...partners, ...partners].map((p, i) => (
+                <div
+                  key={i}
+                  className="whitespace-nowrap text-xl"
+                  style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: "#B7A08B", fontStyle: "italic", fontWeight: "bold" }}
+                >
+                  {p}<span className="mx-6" style={{ color: "#154D57", opacity: 0.4 }}>·</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
@@ -318,15 +309,6 @@ function Intro() {
 }
 
 /* ─── SERVICES ──────────────────────────────────────────────────── */
-const services = [
-  { icon: Ruler, t: "Structural Design", d: "RCC, Steel & composite design from concept to detail drawings.", tag: "Core" },
-  { icon: Building2, t: "RCC Structures", d: "Multi-storied apartments, commercial complexes, hostels and halls.", tag: "Speciality" },
-  { icon: HardHat, t: "Steel & PEB", d: "Pre-engineered halls, industrial sheds and long-span steel structures up to 63ft span.", tag: "Industrial" },
-  { icon: ShieldCheck, t: "Building Permissions", d: "GHMC, HMDA & DTCP approvals managed end-to-end.", tag: "Regulatory" },
-  { icon: Compass, t: "Site Supervision", d: "On-site engineering oversight through the full construction lifecycle.", tag: "Oversight" },
-  { icon: Sparkles, t: "Vaasthu Consultancy", d: "Plans aligned with traditional Vaasthu principles by our certified consultant.", tag: "Advisory" },
-];
-
 function Services() {
   return (
     <section style={{ background: "#FEFAF7" }} className="py-28 md:py-40">
@@ -355,7 +337,7 @@ function Services() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s) => (
+          {smallServices.map((s) => (
             <div
               key={s.t}
               className="group relative rounded-2xl p-8 border transition-all hover:-translate-y-1 cursor-default"
@@ -390,133 +372,7 @@ function Services() {
   );
 }
 
-/* ─── FEATURED PROJECTS ─────────────────────────────────────────── */
-const featured = [
-  { img: pBrewdog, cat: "Hospitality · On-Going", t: "Brewdog Hotel", loc: "Jubilee Hills" },
-  { img: pJntu, cat: "Educational · Completed", t: "JNTU Library Building", loc: "Kalikiri Campus" },
-  { img: pCommercial, cat: "Commercial · Completed", t: "Commercial Complex", loc: "Jubilee Hills" },
-  { img: pChurch, cat: "Religious · Completed", t: "Methodist Church", loc: "Mehdipatnam" },
-  { img: pApartment, cat: "Residential · Completed", t: "Residential Apartment", loc: "Kalyan Nagar" },
-  { img: pSaroor, cat: "Residential · Completed", t: "Residential Apartment", loc: "Saroor Nagar" },
-];
-
-function FeaturedProjects() {
-  return (
-    <section style={{ background: "#FFFFFF" }} className="py-28 md:py-40">
-      <div className="mx-auto max-w-7xl px-8 md:px-14">
-        <div className="flex items-end justify-between gap-6 flex-wrap mb-14">
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-8" style={{ background: "#154D57" }} />
-              <span className="text-[10px] uppercase tracking-[0.35em]" style={{ color: "#154D57" }}>Selected Work</span>
-            </div>
-            <h2
-              className="leading-[1.06]"
-              style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2rem,3.8vw,3.2rem)", color: "#000" }}
-            >
-              Structures that quietly{" "}
-              <em className="not-italic" style={{ color: "#154D57" }}>endure</em>.
-            </h2>
-          </div>
-          <Link
-            to="/projects"
-            className="inline-flex items-center gap-2 text-sm group"
-            style={{ color: "#B7A08B" }}
-          >
-            Full portfolio <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-12 gap-4">
-          {featured.map((p, i) => {
-            const span = ["col-span-12 md:col-span-7","col-span-12 md:col-span-5","col-span-12 md:col-span-4","col-span-12 md:col-span-4","col-span-12 md:col-span-4","col-span-12"][i];
-            const aspect = ["aspect-[16/10]","aspect-[16/10]","aspect-[3/4]","aspect-[3/4]","aspect-[3/4]","aspect-[21/8]"][i];
-            return (
-              <Link
-                to="/projects"
-                key={i}
-                className={`${span} group relative overflow-hidden rounded-2xl`}
-                style={{ boxShadow: "0 4px 24px rgba(21,77,87,0.07)" }}
-              >
-                <div className={`${aspect} w-full`} style={{ background: "#e8e0d8" }}>
-                  <img src={p.img} alt={p.t} loading="lazy" className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]" />
-                </div>
-                {/* Overlay */}
-                <div className="absolute inset-0 transition-opacity" style={{ background: "linear-gradient(to top, rgba(21,77,87,0.82) 0%, rgba(21,77,87,0.1) 55%, transparent 100%)" }} />
-                {/* Bottom teal sweep on hover */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
-                  style={{ background: "#B7A08B" }}
-                />
-                {/* Info */}
-                <div className="absolute left-5 right-5 bottom-5">
-                  <div className="text-[9px] uppercase tracking-[0.28em] mb-1" style={{ color: "#B7A08B" }}>{p.cat}</div>
-                  <div className="flex items-end justify-between text-white">
-                    <div>
-                      <div style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem" }}>{p.t}</div>
-                      <div className="text-xs mt-0.5 opacity-70">{p.loc}</div>
-                    </div>
-                    <div
-                      className="w-9 h-9 rounded-full grid place-items-center border border-white/25 group-hover:border-white/60 transition-colors shrink-0"
-                      style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(4px)" }}
-                    >
-                      <ArrowUpRight size={14} />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── PARTNERS MARQUEE ──────────────────────────────────────────── */
-const partners = [
-  "Hafeez Contractor","Parushram Reddy","P. Sudheer Reddy","Vamshiram Builders",
-  "Aparna Constructions","Ashoka Builders","Vinod Bachala","Debasish Roy",
-  "Anwar Aziz","Genesis","Anchuri & Anchuri","Aslam Architects","Nirup Reddy",
-  "Maheswari Builders","Bhavya Constructions","Radha Realty Infra","Modi Builders",
-  "My Home Construction","Reliance Builders","ARK Builders",
-];
-
-function Logos() {
-  return (
-    <section
-      className="py-16 overflow-hidden"
-      style={{ background: "#FEFAF7", borderTop: "1px solid #e8e0d8", borderBottom: "1px solid #e8e0d8" }}
-    >
-      <div className="mb-7 text-center">
-        <span className="text-[10px] uppercase tracking-[0.38em]" style={{ color: "#B7A08B" }}>
-          Trusted by leading builders & architects
-        </span>
-      </div>
-      <div style={{ maskImage: "linear-gradient(to right, transparent, #000 10%, #000 90%, transparent)" }}>
-        <div className="flex gap-10 marquee w-max">
-          {[...partners, ...partners].map((p, i) => (
-            <div
-              key={i}
-              className="whitespace-nowrap text-lg"
-              style={{ fontFamily: "Georgia, serif", color: "#B7A08B" }}
-            >
-              {p}<span className="mx-6" style={{ color: "#154D57", opacity: 0.4 }}>·</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── TESTIMONIALS ──────────────────────────────────────────────── */
-const testimonials = [
-  { q: "Their structural detailing gave us confidence on a complex long-span hall — calm, precise, and on schedule.", a: "Architect, Hyderabad" },
-  { q: "A practice that treats every drawing like it bears weight. Aditi has been our structural partner for years.", a: "Builder, Jubilee Hills" },
-  { q: "From permissions to site supervision — one continuous, dependable thread.", a: "Developer, Kacheguda" },
-];
-
 function Testimonials() {
   return (
     <section style={{ background: "#154D57" }} className="py-28 md:py-40">
@@ -628,8 +484,6 @@ function Index() {
       <Hero />
       <Intro />
       <Services />
-      <FeaturedProjects />
-      <Logos />
       <Testimonials />
       <CTA />
     </Layout>

@@ -1,18 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import venk from "@/assets/team/venkateshwara-rao.jpg";
+import venk from "@/assets/team/venkateshwara-rao.jpeg";
 import vandana from "@/assets/team/vandana-rao.jpg";
 import about from "@/assets/about-studio.jpg";
 import blueprint from "@/assets/blueprint-bg.jpg";
-import { ArrowUpRight, Award, BookOpen, Building2, Users, MapPin, CheckCircle2 } from "lucide-react";
-
-/* ─── PALETTE
-   cream:   #FEFAF7
-   teal:    #154D57
-   taupe:   #B7A08B
-   white:   #FFFFFF
-   black:   #000000
-──────────────────── */
+import { ArrowUpRight, Award, BookOpen, Building2, Users, CheckCircle2 } from "lucide-react";
+import { architects, builders, timeline } from "#/assets/data/site";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -24,28 +17,6 @@ export const Route = createFileRoute("/about")({
     links: [{ rel: "canonical", href: "/about" }],
   }),
 });
-
-const timeline = [
-  { y: "2001", t: "Founded in Hyderabad", d: "Two partners, two projects. A practice built on the conviction that no building stands without its skeleton." },
-  { y: "2008", t: "First Long-Span RCC", d: "Engineered a 63-foot pillar-to-pillar RCC structure at Moulali Industrial Area — the firm's defining technical milestone." },
-  { y: "2014", t: "Sacred & Civic Structures", d: "Structural design of Vijaya Ganapathi Temple, Kukatpally — tradition meeting precision engineering." },
-  { y: "2018", t: "Campus Engineering", d: "JNTU College of Engineering Campus at Kalikiri — Boys Hostel, Guest House and Library Building, all three structures." },
-  { y: "2022", t: "Hospitality & High-Rise", d: "Brewdog Hotel, Jubilee Hills and a Commercial cum Residential tower (Cellar+Stilt 1+Stilt 2+9 Floors) at Kacheguda." },
-  { y: "Today", t: "26+ Years On", d: "Structural and project consultancy spanning residential, commercial, educational, religious and hospitality sectors across Hyderabad." },
-];
-
-const architects = [
-  "Hafeez Contractor","Parushram Reddy","P. Sudheer Reddy","Vinod Bachala",
-  "Debasish Roy","Anwar Aziz","Genesis","Anchuri & Anchuri","Aslam Architects",
-  "Nirup Reddy","Anil Hasan","D. Satyanarayana","M. Srinivas Chary","Madhu",
-  "Mahidhar","Ram Mohan","Ravinder","Satish Bandari","Balaji",
-];
-
-const builders = [
-  "Vamshiram Builders","Aparna Constructions","Ashoka Builders","Maheswari Builders",
-  "Bhavya Constructions","Radha Realty Infra Projects Pvt. Ltd","Modi Builders",
-  "My Home Construction","Reliance Builders","ARK Builders",
-];
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 function Hero() {
@@ -149,7 +120,12 @@ function Founders() {
           {/* Venkateshwara Rao */}
           <div className="group rounded-3xl overflow-hidden border transition-all hover:shadow-2xl" style={{ background: "#FFFFFF", borderColor: "#e8e0d8" }}>
             <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-              <img src={venk} alt="P. Venkateshwara Rao" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <img
+                src={venk}
+                alt="P. Venkateshwara Rao"
+                loading="lazy"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+              />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,77,87,0.6) 0%, transparent 55%)" }} />
               <div className="absolute left-6 bottom-6">
                 <div className="text-[9px] uppercase tracking-[0.3em]" style={{ color: "rgba(183,160,139,0.9)" }}>Chief Consultant</div>
@@ -187,7 +163,12 @@ function Founders() {
           {/* Vandana Rao */}
           <div className="group rounded-3xl overflow-hidden border transition-all hover:shadow-2xl" style={{ background: "#FFFFFF", borderColor: "#e8e0d8" }}>
             <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
-              <img src={vandana} alt="P. Vandana Rao" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <img
+                src={vandana}
+                alt="P. Vandana Rao"
+                loading="lazy"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+              />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,77,87,0.6) 0%, transparent 55%)" }} />
               <div className="absolute left-6 bottom-6">
                 <div className="text-[9px] uppercase tracking-[0.3em]" style={{ color: "rgba(183,160,139,0.9)" }}>Managing Partner</div>
@@ -384,7 +365,7 @@ function Refer() {
             </p>
           </div>
           <div className="md:col-span-5 flex flex-col gap-4">
-            {["During plot/area planning","Before architectural drawings are finalised","Before permissions are applied for","Before construction commences"].map((step, i) => (
+            {["During plot/area planning", "Before architectural drawings are finalised", "Before permissions are applied for", "Before construction commences"].map((step, i) => (
               <div key={step} className="flex items-center gap-4 p-4 rounded-xl" style={{ background: "#FEFAF7", border: "1px solid #e4dbd2" }}>
                 <div className="w-8 h-8 rounded-full grid place-items-center shrink-0 text-xs font-medium" style={{ background: "#154D57", color: "#FEFAF7" }}>
                   {i + 1}

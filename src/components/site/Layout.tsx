@@ -6,7 +6,7 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
-      <main className="pt-24">{children}</main>
+      <main className="pt-28">{children}</main>
       <Footer />
     </div>
   );

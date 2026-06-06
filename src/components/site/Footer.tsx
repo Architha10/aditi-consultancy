@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import blueprint from "@/assets/blueprint-bg.jpg";
+import { site } from "#/assets/data/site";
 
 /* ─── PALETTE
    cream:  #FEFAF7  |  teal: #154D57
@@ -9,19 +10,19 @@ import blueprint from "@/assets/blueprint-bg.jpg";
 ──────────────────────────────────────────────────────── */
 
 const navLinks = [
-  { to: "/about",    label: "About" },
+  { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },
-  { to: "/contact",  label: "Contact" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const services = [
   "Structural Design",
   "RCC Structures",
   "Steel & PEB",
-  "Building Permissions",
+  // "Building Permissions",
   "Site Supervision",
-  "Vaasthu Consultancy",
+  "Vedic Vastu Consultancy",
 ];
 
 export function Footer() {
@@ -161,11 +162,13 @@ export function Footer() {
                 >
                   <MapPin size={13} style={{ color: "#B7A08B" }} />
                 </div>
-                <span className="text-sm leading-relaxed" style={{ color: "rgba(254,250,247,0.60)" }}>
-                  #8-2-1/6-C, Opp. Axis Bank,
-                  <br />Srinagar Colony Road,
-                  <br />Hyderabad – 500 082
-                </span>
+
+                <p
+                  className="text-sm leading-relaxed whitespace-pre-line"
+                  style={{ color: "rgba(254,250,247,0.60)" }}
+                >
+                  {site.contact.address}
+                </p>
               </li>
               <li className="flex items-center gap-3">
                 <div
@@ -198,25 +201,7 @@ export function Footer() {
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FEFAF7"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(254,250,247,0.60)"; }}
                 >
-                  aditiconsultants3@gmail.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <div
-                  className="w-8 h-8 rounded-lg grid place-items-center shrink-0"
-                  style={{ background: "rgba(254,250,247,0.08)" }}
-                >
-                  <ArrowUpRight size={13} style={{ color: "#B7A08B" }} />
-                </div>
-                <a
-                  href="https://www.aditiconsultants.com"
-                  target="_blank" rel="noreferrer"
-                  className="text-sm transition-colors"
-                  style={{ color: "rgba(254,250,247,0.60)" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FEFAF7"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(254,250,247,0.60)"; }}
-                >
-                  www.aditiconsultants.com
+                  {site.contact.email}
                 </a>
               </li>
             </ul>

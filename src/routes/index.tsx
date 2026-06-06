@@ -50,7 +50,7 @@ function Hero() {
         style={{ background: "linear-gradient(to right, #154D57, #B7A08B, transparent)" }}
       />
 
-      <div className="mx-auto max-w-7xl px-8 md:px-14 pt-20 md:pt-28 pb-12 md:pb-16">
+      <div className="mx-auto max-w-7xl px-8 md:px-14 pt-20 md:pt-28 pb-24 md:pb-36">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* LEFT — text */}
@@ -141,6 +141,7 @@ function Hero() {
                 src={hero}
                 alt="Modern structure by Aditi Consultants"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: "80% center" }}
               />
               {/* Teal gradient foot */}
               <div
@@ -197,7 +198,7 @@ function Hero() {
         </div>
 
         {/* Partners / Logos marquee — inside hero */}
-        <div className="mt-10 pt-8 border-t" style={{ borderColor: "#e4dbd2" }}>
+        <div className="mt-16 pt-10 border-t" style={{ borderColor: "#e4dbd2" }}>
           <div className="mb-7 text-center">
             <span className="text-[10.5px] uppercase tracking-[0.38em]" style={{ color: "#154D57" }}>
               Trusted by leading builders & architects

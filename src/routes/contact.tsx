@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/site/Layout";
-import blueprint from "@/assets/blueprint-bg.jpg";
 import {
   Phone,
   Mail,
@@ -9,7 +8,6 @@ import {
   MessageCircle,
   ArrowUpRight,
   Check,
-  Clock,
   Building2,
   AlertCircle,
 } from "lucide-react";

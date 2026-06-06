@@ -251,7 +251,7 @@ function ProjectCard({
             src={heroSrc}
             alt={p.title}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
+            className="w-full h-full object-cover transition-transform duration-1200 ease-out group-hover:scale-[1.05]"
           />
         ) : (
           <div
@@ -369,7 +369,7 @@ function ProjectGrid({
     "tall", "square", "wide",
   ];
   return (
-    <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
+    <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:balance]">
       {list.map((p, i) => (
         <div key={p.title + p.loc} className="mb-5 break-inside-avoid">
           <ProjectCard

@@ -129,7 +129,7 @@ export const projectsData: Project[] = [
     title: "APCPDCL Corporate Office",
     loc: "Mint Compound, Hyderabad",
     cat: "Commercial",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A modern administrative corporate headquarters designed for the power distribution sector. The facility integrates heavy-duty electrical infrastructure, an energy-efficient structural envelope, and specialized command operations layouts.",
     highlights: [
@@ -146,7 +146,7 @@ export const projectsData: Project[] = [
     title: "APCPDCL Recreation Club",
     loc: "Hyderabad, Telangana",
     cat: "Commercial",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A community and wellness facility dedicated to personnel. Featuring a structural layout optimized for broad spans, incorporating indoor athletic facilities, community spaces, and recreational decks.",
     highlights: [
@@ -214,7 +214,7 @@ export const projectsData: Project[] = [
     title: "Howard Lake View School",
     loc: "Gachibowli, Hyderabad",
     cat: "Educational",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A modern educational campus layout designed with expansive spatial corridors, optimized natural cross-ventilation, and dedicated outdoor recreational infrastructure overlooking local water bodies.",
     highlights: [
@@ -231,7 +231,7 @@ export const projectsData: Project[] = [
     title: "Residential Development",
     loc: "Nalagandla, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A multi-story residential enclave utilizing a high-resilience frame structure. Features deep corner projections for optimized wind capture and premium textured facade alignments.",
     highlights: [
@@ -248,7 +248,7 @@ export const projectsData: Project[] = [
     title: "P.V. Satish Kumar Residency",
     loc: "East Godavari, Andhra Pradesh",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "An expansive independent premium villa setup configured for coastal soil conditions. Features custom isolated foundation variants and deep-set perimeter shade balconies.",
     highlights: [
@@ -265,7 +265,7 @@ export const projectsData: Project[] = [
     title: "Ramanthpur Elevation Study",
     loc: "Ramanthpur, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A contemporary multi-family mid-rise setup focusing on premium architectural elevation framing and integrated ventilation conduits along tight urban plots.",
     highlights: [
@@ -279,10 +279,10 @@ export const projectsData: Project[] = [
   },
 
   {
-    title: "Premium Residential Apartment",
+    title: "Residential Apartment",
     loc: "Dilshuk Nagar, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A premium multi-family residential complex engineered to provide optimized floor-plate utilization inside highly consolidated metropolitan spaces.",
     highlights: [
@@ -296,10 +296,10 @@ export const projectsData: Project[] = [
   },
 
   {
-    title: "Urban Residential Apartment",
+    title: "Residential Apartment",
     loc: "Hyderabad, Telangana",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A contemporary residential mid-rise development optimizing standard unit configurations. Employs advanced thermal load mitigation strategies through custom deep-set alcoves.",
     highlights: [
@@ -316,7 +316,7 @@ export const projectsData: Project[] = [
     title: "Residential Building",
     loc: "Attapur, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A boutique residential development featuring a reinforced frame structure designed to optimize floor plates on a mid-sized suburban block.",
     highlights: [
@@ -333,7 +333,7 @@ export const projectsData: Project[] = [
     title: "Residential Complex",
     loc: "BHEL, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A large-scale multi-family block catering to the industrial corridor housing demands. Engineered using standard component layouts to accelerate deployment timelines.",
     highlights: [
@@ -350,7 +350,7 @@ export const projectsData: Project[] = [
     title: "Gachibowli Residential Building",
     loc: "Gachibowli, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "An upscale urban residential tower optimized for professionals in the tech corridor. Integrates premium materials with space-maximizing cantilever structural extensions.",
     highlights: [
@@ -367,7 +367,7 @@ export const projectsData: Project[] = [
     title: "Ramanthpur Residential Tower",
     loc: "Ramanthpur, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A mid-rise block optimizing multi-family domestic utility designs. Incorporates shared community terraces paired with localized water handling units.",
     highlights: [
@@ -384,7 +384,7 @@ export const projectsData: Project[] = [
     title: "Sainikpuri Residential Building",
     loc: "Secunderabad, Telangana",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A low-density residential layout engineered to blend with the mature green landscapes of Sainikpuri, emphasizing natural limestone accents and deep sunshades.",
     highlights: [
@@ -401,7 +401,7 @@ export const projectsData: Project[] = [
     title: "Secunderabad Residential Complex",
     loc: "Secunderabad, Telangana",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A grand multi-family development utilizing a dual-wing structural frame strategy to separate daytime living spaces from sleeping zones cleanly.",
     highlights: [
@@ -544,7 +544,7 @@ export const projectsData: Project[] = [
     title: "Sri Chalapathi Residency",
     loc: "Bhanoor Village, Telangana",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A modern standalone villa design engineered with a striking cantilevered structure and premium multi-textured elevations. The architectural plan balances a private residential footprint with open terrace architecture, offering alternative exterior configurations featuring deep charcoal framing and warm terracotta wood-cladding options.",
     highlights: [
@@ -569,7 +569,7 @@ export const projectsData: Project[] = [
     title: "Brewdog Hotel",
     loc: "Jubilee Hills, Hyderabad",
     cat: "Hospitality",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "A boutique hospitality project bringing the Brewdog brand to Hyderabad. The structural package includes a dramatic double-height lobby, rooftop bar slab, and a cantilevered mezzanine over the main bar floor.",
     highlights: [
@@ -587,7 +587,7 @@ export const projectsData: Project[] = [
     title: "Residential Apartment",
     loc: "Champapet, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     gallery: [
       { src: pChampapet, caption: "Under-construction view" },
     ],
@@ -597,7 +597,7 @@ export const projectsData: Project[] = [
     title: "Commercial cum Residential",
     loc: "Kacheguda, Hyderabad",
     cat: "Commercial",
-    status: "Ongoing",
+    status: "Completed",
     note: "Cellar + Stilt 1 + Stilt 2 + 9 Floors",
     description:
       "A large mixed-use tower in the dense Kacheguda locality. The lower three levels are commercial (retail/office), with 9 residential floors above on a shared structural core. Deep basement on a constrained site required sheet-pile retention.",
@@ -616,7 +616,7 @@ export const projectsData: Project[] = [
     title: "Residential Building",
     loc: "Tolichowki, Hyderabad",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     gallery: [
       { src: pTolichowki, caption: "Under construction" },
     ],
@@ -626,7 +626,7 @@ export const projectsData: Project[] = [
     title: "Residential Apartment",
     loc: "Gadwal, Telangana",
     cat: "Residential",
-    status: "Ongoing",
+    status: "Completed",
     description:
       "An affordable residential project in the Gadwal district designed for local-market demand. Black cotton soil conditions on-site required under-reamed pile foundations for consistent long-term settlement.",
     highlights: [
@@ -645,7 +645,7 @@ export const projectsData: Project[] = [
     title: "Residential Building",
     loc: "Dilshuk Nagar, Hyderabad",
     cat: "Residential",
-    status: "Upcoming",
+    status: "Completed",
     description:
       "A new residential development in the established Dilshuk Nagar neighbourhood. Structural design work is currently underway; foundation type to be confirmed after soil investigation report.",
     gallery: [
@@ -657,7 +657,7 @@ export const projectsData: Project[] = [
     title: "Residential Apartment",
     loc: "Alwal, Hyderabad",
     cat: "Residential",
-    status: "Upcoming",
+    status: "Completed",
     description:
       "An upcoming mid-rise apartment in the Alwal growth corridor north of Hyderabad. Preliminary structural scheme and load calculations are in progress.",
     gallery: [
@@ -686,7 +686,7 @@ export type Cat =
   | "Residential"
   | "Educational"
   | "Religious"
-  | "Hospitality";
+  | "Hospitality"|"Farm Houses";
 export type Status = "Completed" | "Ongoing" | "Upcoming";
 
 export const cats: Cat[] = [
@@ -696,6 +696,7 @@ export const cats: Cat[] = [
   "Educational",
   "Religious",
   "Hospitality",
+  "Farm Houses",
 ];
 
 export const statusStyle: Record<

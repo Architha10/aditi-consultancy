@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import blueprint from "@/assets/blueprint-bg.jpg";
-import { services, structures, packages } from "#/assets/data/site";
+import { services, structures, packages, serviceHighlights, usps } from "#/assets/data/site";
 import { ArrowUpRight, Check } from "lucide-react";
 
 /* ─── PALETTE
@@ -61,20 +61,28 @@ function Hero() {
               className="leading-[0.96] tracking-tight"
               style={{
                 fontFamily: "Georgia, 'Times New Roman', serif",
-                fontSize: "clamp(3rem,6.5vw,6rem)",
+                fontSize: "clamp(2.2rem, 4vw, 4rem)",
                 color: "#000000",
               }}
             >
-              Engineering,
+              Architectural Planning and Structural Engineering,
               <br />
               <em className="not-italic" style={{ color: "#154D57" }}>
-                end
+                End
               </em>{" "}
               to{" "}
               <em className="not-italic" style={{ color: "#154D57" }}>
-                end
+                End
               </em>
-              .
+              .<br/> <span
+                style={{
+                  color: "#6b6057",
+                  fontSize: "0.55em",
+                  fontWeight: 400,
+                }}
+              >
+                {" "} (Permissions to Elevations)
+              </span>
             </h1>
           </div>
           <div className="lg:col-span-6 lg:pb-2">
@@ -87,7 +95,7 @@ function Hero() {
               same uncompromising standard since 2001.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["RCC", "Steel", "PEB", "Pre-Stressed", "Bridge"].map((s) => (
+              {serviceHighlights.map((s) => (
                 <span
                   key={s}
                   className="px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.2em] border"
@@ -111,7 +119,7 @@ function Hero() {
         >
           {[
             { v: "08", l: "Service Disciplines" },
-            { v: "63ft", l: "Record RCC Span" },
+            { v: "90ft", l: "Record RCC Span" },
             { v: "3", l: "Regulatory Bodies" },
             { v: "5+", l: "Sectors Covered" },
           ].map((s) => (
@@ -338,6 +346,161 @@ function ServiceCards() {
   );
 }
 
+export function USPHighlight() {
+  return (
+    <section className="py-20 md:py-28" style={{ background: "#0E3A42", fontFamily: "'DM Sans', sans-serif" }}>
+      <div className="mx-auto max-w-7xl px-8 md:px-14">
+
+        {/* Header row */}
+        <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-8" style={{ background: "#C4A882" }} />
+              <span
+                className="text-[10px] uppercase tracking-[0.3em]"
+                style={{ color: "#C4A882" }}
+              >
+                What Sets Us Apart
+              </span>
+            </div>
+            <h2
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: "clamp(2rem, 3vw, 2.75rem)",
+                color: "#FBF7F3",
+                lineHeight: 1.1,
+                fontWeight: 400,
+                margin: 0,
+              }}
+            >
+              Architectural &amp; structural
+              <br />
+              engineering with
+              <br />
+              <em style={{ color: "#C4A882", fontStyle: "italic" }}>
+                purpose and precision
+              </em>
+              .
+            </h2>
+          </div>
+
+          <p
+            className="text-sm leading-relaxed lg:max-w-sm self-end"
+            style={{ color: "rgba(251,247,243,0.5)", fontWeight: 300, margin: 0 }}
+          >
+            Beyond drawings and approvals, our practice combines practical
+            engineering with client priorities — resulting in better spaces,
+            stronger structures and smarter planning decisions.
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div
+          className="w-full mb-10"
+          style={{
+            height: 1,
+            background: "linear-gradient(to right, rgba(196,168,130,0.3), transparent)",
+          }}
+        />
+
+        {/* USP cards — single row */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 overflow-hidden rounded-[20px]"
+          style={{
+            gap: 1,
+            background: "rgba(196,168,130,0.15)",
+          }}
+        >
+          {usps.map((item, i) => (
+            <div
+              key={item.label}
+              className="flex flex-col gap-7 p-10 relative transition-colors duration-300"
+              style={{
+                background: "rgba(14,58,66,0.95)",
+                borderRadius:
+                  i === 0
+                    ? "20px 0 0 20px"
+                    : i === usps.length - 1
+                    ? "0 20px 20px 0"
+                    : 0,
+              }}
+            >
+              {/* Top accent line */}
+              <div
+                className="absolute top-0 left-0 right-0 h-px"
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, rgba(196,168,130,0.5), transparent)",
+                }}
+              />
+
+              {/* Glyph + tag */}
+              <div className="flex items-center justify-between">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-lg"
+                  style={{
+                    background: "rgba(196,168,130,0.12)",
+                    color: "#C4A882",
+                    border: "1px solid rgba(196,168,130,0.2)",
+                  }}
+                >
+                  {item.glyph}
+                </div>
+                <span
+                  className="text-[9px] uppercase tracking-[0.2em] px-3 py-1 rounded-full whitespace-nowrap"
+                  style={{
+                    background: "rgba(196,168,130,0.1)",
+                    color: "#C4A882",
+                    border: "1px solid rgba(196,168,130,0.18)",
+                  }}
+                >
+                  {item.tag}
+                </span>
+              </div>
+
+              {/* Text */}
+              <div className="flex-1">
+                <h3
+                  style={{
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: "1.45rem",
+                    color: "#FBF7F3",
+                    lineHeight: 1.2,
+                    fontWeight: 400,
+                    margin: "0 0 14px",
+                  }}
+                >
+                  {item.label}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "rgba(251,247,243,0.52)", fontWeight: 300, margin: 0 }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+
+              {/* Bottom accent */}
+              <div className="flex items-center gap-2">
+                <div
+                  className="w-1 h-1 rounded-full flex-shrink-0"
+                  style={{ background: "rgba(196,168,130,0.4)" }}
+                />
+                <div
+                  className="flex-1 h-px"
+                  style={{
+                    background: "linear-gradient(to right, rgba(196,168,130,0.4), transparent)",
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── PACKAGES ──────────────────────────────────────────────────── */
 
 const PACKAGE_ACCENTS: Record<string, { border: string; badge: string; badgeText: string; highlight: boolean }> = {
@@ -500,9 +663,9 @@ function Packages() {
                       accent.highlight
                         ? { background: "#FEFAF7", color: "#154D57" }
                         : {
-                            background: "rgba(21,77,87,0.08)",
-                            color: "#154D57",
-                          }
+                          background: "rgba(21,77,87,0.08)",
+                          color: "#154D57",
+                        }
                     }
                   >
                     Get a Quote <ArrowUpRight size={14} />
@@ -541,20 +704,20 @@ function HowWeWork() {
       h: "Initial Consultation",
       d: "We understand your project — site, programme, budget and timeline — before committing to any approach.",
     },
-    {
+     {
       n: "02",
-      h: "Structural Concept",
-      d: "We develop the structural system: spans, load paths, foundation strategy and material choices.",
+      h: "Permissions",
+      d: "Where required, we handle GHMC/HMDA/DTCP submissions and follow through to approval.",
     },
     {
       n: "03",
-      h: "Design & Drawings",
-      d: "Full structural calculations, GFC drawings, and coordination with your architect and contractor.",
+      h: "Structural Concept",
+      d: "We develop the structural system: spans, load analysis, foundation strategy and material choices.",
     },
     {
       n: "04",
-      h: "Permissions",
-      d: "Where required, we handle GHMC/HMDA/DTCP submissions and follow through to approval.",
+      h: "Design & Drawings",
+      d: "Full structural calculations, GFC drawings, and coordination with your clients.",
     },
     {
       n: "05",
@@ -769,7 +932,7 @@ function CTA() {
                 lineHeight: 1.1,
               }}
             >
-              Not sure which service you need?
+              Share Your Vision With Us..
             </h3>
             <p
               className="mt-4 text-sm leading-relaxed max-w-lg"
@@ -809,6 +972,7 @@ function ServicesPage() {
     <Layout>
       <Hero />
       <WhatWeDesign />
+      <USPHighlight/>
       <ServiceCards />
       <Packages />
       <HowWeWork />

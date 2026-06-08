@@ -69,9 +69,9 @@ function Hero() {
         <div className="mt-16 pt-8 border-t grid grid-cols-2 sm:grid-cols-4 gap-6" style={{ borderColor: "#e4dbd2" }}>
           {[
             { v: "26+", l: "Years of Practice" },
-            { v: "120+", l: "Structures Engineered" },
-            { v: "63ft", l: "Max Span (Moulali)" },
-            { v: "5", l: "Sectors Served" },
+            { v: "1500+", l: "Architectural and structural projects" },
+            { v: "90ft", l: "Max Span (Chruch at Chandrakal)" },
+            { v: "5+", l: "Sectors Served" },
           ].map((s) => (
             <div key={s.l}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: "2.8rem", color: "#154D57", lineHeight: 1 }}>{s.v}</div>
@@ -124,7 +124,8 @@ function Founders() {
                 src={venk}
                 alt="P. Venkateshwara Rao"
                 loading="lazy"
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                style={{ objectPosition: "center 15%" }}
               />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(21,77,87,0.6) 0%, transparent 55%)" }} />
               <div className="absolute left-6 bottom-6">
@@ -282,9 +283,9 @@ function Philosophy() {
         {/* Three pillars */}
         <div className="mt-16 grid sm:grid-cols-3 gap-5">
           {[
-            { h: "Honest", d: "Transparent structural decisions. No over-engineering, no cutting corners." },
+            { h: "Honest", d: "Transparent architectural and structural decisions. No over-engineering, no cutting corners." },
             { h: "Imaginative", d: "Creative solutions to complex span, load and site-specific challenges." },
-            { h: "Responsible", d: "Every drawing bears the weight of the lives that will occupy the structure." },
+            { h: "Responsible", d: "Every drawing bears the weight of the lives that will occupy the project." },
           ].map((p) => (
             <div key={p.h} className="rounded-2xl p-6 text-left" style={{ background: "rgba(254,250,247,0.07)", border: "1px solid rgba(183,160,139,0.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem", color: "#B7A08B" }}>{p.h}</div>
@@ -314,6 +315,7 @@ function Network() {
           {[
             { title: "Architects", count: architects.length, list: architects, accent: "#154D57" },
             { title: "Builders", count: builders.length, list: builders, accent: "#B7A08B" },
+            
           ].map((g) => (
             <div key={g.title} className="rounded-3xl border p-8 md:p-10" style={{ background: "#FEFAF7", borderColor: "#e4dbd2" }}>
               <div className="flex items-baseline justify-between mb-8">
@@ -341,45 +343,6 @@ function Network() {
   );
 }
 
-/* ─── REFER SECTION (from PPT slide 31) ────────────────────────── */
-function Refer() {
-  return (
-    <section style={{ background: "#FEFAF7" }} className="py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-8 md:px-14">
-        <div className="rounded-3xl p-10 md:p-14 grid md:grid-cols-12 gap-10 items-center" style={{ background: "#FFFFFF", border: "1px solid #e4dbd2" }}>
-          <div className="md:col-span-7">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-8" style={{ background: "#154D57" }} />
-              <span className="text-[10px] uppercase tracking-[0.35em]" style={{ color: "#154D57" }}>When Do We Come In?</span>
-            </div>
-            <h3 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", color: "#000", lineHeight: 1.1 }}>
-              Before the first brick is laid.
-            </h3>
-            <p className="mt-5 leading-relaxed" style={{ color: "#6b6057", fontSize: "0.95rem" }}>
-              We come in at the point where planning of a particular area or plot has begun — in contact with
-              the builder, developer or individual plot owner. In other words, before construction begins.
-            </p>
-            <p className="mt-4 leading-relaxed" style={{ color: "#6b6057", fontSize: "0.95rem" }}>
-              As there is no human body without a skeleton, there is never a building without a structural
-              engineer. The earlier we are involved, the stronger the foundation — literally and practically.
-            </p>
-          </div>
-          <div className="md:col-span-5 flex flex-col gap-4">
-            {["During plot/area planning", "Before architectural drawings are finalised", "Before permissions are applied for", "Before construction commences"].map((step, i) => (
-              <div key={step} className="flex items-center gap-4 p-4 rounded-xl" style={{ background: "#FEFAF7", border: "1px solid #e4dbd2" }}>
-                <div className="w-8 h-8 rounded-full grid place-items-center shrink-0 text-xs font-medium" style={{ background: "#154D57", color: "#FEFAF7" }}>
-                  {i + 1}
-                </div>
-                <span className="text-sm" style={{ color: "#3a3530" }}>{step}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── CTA ───────────────────────────────────────────────────────── */
 function CTA() {
   return (
@@ -392,7 +355,7 @@ function CTA() {
           <div>
             <div className="text-[10px] uppercase tracking-[0.35em] mb-4" style={{ color: "rgba(183,160,139,0.7)" }}>Begin a Project</div>
             <h3 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem,3vw,2.8rem)", color: "#FEFAF7", lineHeight: 1.1 }}>
-              Have a structure in mind?
+              Have a project in mind?
             </h3>
             <p className="mt-3 text-sm leading-relaxed max-w-md" style={{ color: "rgba(254,250,247,0.6)" }}>
               We'd be glad to walk you through how we'd approach it. A short conversation often defines the direction of an entire project.
@@ -432,7 +395,6 @@ function AboutPage() {
       <Timeline />
       <Philosophy />
       <Network />
-      <Refer />
       <CTA />
     </Layout>
   );

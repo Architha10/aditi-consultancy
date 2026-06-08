@@ -215,23 +215,6 @@ export function Footer() {
             © {new Date().getFullYear()} Aditi Consultants. All rights reserved.
           </div>
 
-          {/* License badge */}
-          <div
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full"
-            style={{ background: "rgba(254,250,247,0.06)", border: "1px solid rgba(183,160,139,0.18)" }}
-          >
-            <span
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ background: "#B7A08B" }}
-            />
-            <span
-              className="text-[10px] uppercase tracking-[0.22em] font-mono"
-              style={{ color: "rgba(183,160,139,0.70)" }}
-            >
-              GHMC Lic. No. 166 / Stru.Engr. / TP10 / MCH
-            </span>
-          </div>
-
           {/* WhatsApp quick link */}
           <a
             href="https://wa.me/919246270133"

@@ -1,9 +1,9 @@
-import { Building2, ClipboardCheck, Compass, Factory, HardHat, Ruler, Sparkles } from "lucide-react";
+import { Building2, ClipboardCheck, Compass, DraftingCompass, Factory, HardHat, Ruler, ShieldCheck, Sparkles } from "lucide-react";
 
 export const site = {
   name: "Aditi Consultants",
   tagline1: "Building Trust",
-  tagline2:"Designing Strength",
+  tagline2: "Designing Strength",
   foundedYear: 2001,
   contact: {
     email: "aditiconsultants3@gmail.com",
@@ -71,49 +71,110 @@ export const packages = [
 ] as const;
 
 export const timeline = [
-  { y: "2001", t: "Founded in Hyderabad", d: "Two partners, two projects. A practice built on the conviction that no building stands without its skeleton." },
-  { y: "2008", t: "First Long-Span RCC", d: "Engineered a 63-foot pillar-to-pillar RCC structure at Moulali Industrial Area — the firm's defining technical milestone." },
-  { y: "2014", t: "Sacred & Civic Structures", d: "Structural design of Vijaya Ganapathi Temple, Kukatpally — tradition meeting precision engineering." },
-  { y: "2018", t: "Campus Engineering", d: "JNTU College of Engineering Campus at Kalikiri — Boys Hostel, Guest House and Library Building, all three structures." },
-  { y: "2022", t: "Hospitality & High-Rise", d: "Brewdog Hotel, Jubilee Hills and a Commercial cum Residential tower (Cellar+Stilt 1+Stilt 2+9 Floors) at Kacheguda." },
-  { y: "Today", t: "26+ Years On", d: "Structural and project consultancy spanning residential, commercial, educational, religious and hospitality sectors across Hyderabad." },
+  {
+    y: "2001",
+    t: "Founded in Hyderabad",
+    d: "Aditi Consultants was established with two projects and a belief that every successful building begins with a strong structural foundation."
+  },
+  {
+    y: "2003",
+    t: "Bhavani Island Resort",
+    d: "Provided structural design and engineering consultancy for the resort development at Bhavani Island, Vijayawada."
+  },
+  {
+    y: "2006",
+    t: "Residential Apartment Projects",
+    d: "Delivered structural design consultancy for major residential apartment developments at Red Hills and Kalyan Nagar, covering approximately 3,000 square yards."
+  },
+  {
+    y: "2008",
+    t: "First Long-Span RCC Structure",
+    d: "Engineered a 63-foot pillar-to-pillar RCC structure in the Moula Ali Industrial Area, marking a significant technical milestone for the practice."
+  },
+  {
+    y: "2014",
+    t: "Campus Engineering",
+    d: "Designed and engineered 18 buildings for JNTU College of Engineering, Kalikiri, including boys' and girls' hostels, professors' and assistant professors' quarters, a guest house, library, and other campus facilities."
+  },
+  {
+    y: "2016",
+    t: "Temple Engineering",
+    d: "Provided architectural planning and structural design for the Shri Krishna Bhagavan Temple, Mathura, blending traditional architecture with modern engineering."
+  },
+  {
+    y: "2018",
+    t: "Religious Infrastructure",
+    d: "Delivered structural design consultancy for the Vijaya Ganapathi Temple at Kukatpally, Hyderabad."
+  },
+  {
+    y: "2019",
+    t: "Healthcare & Hospitality",
+    d: "Provided structural design services for the Brewdog Hotel in Jubilee Hills and Delta Hospital in Rajahmundry."
+  },
+  {
+    y: "2021",
+    t: "Record Long-Span RCC Structure",
+    d: "Engineered a landmark 90-foot pillar-to-pillar RCC church structure at Chandrakal, demonstrating advanced long-span structural capability."
+  },
+  {
+    y: "Today",
+    t: "26+ Years of Practice",
+    d: "Continuing to deliver structural and project consultancy services across residential, commercial, educational, industrial, religious, healthcare, and hospitality sectors."
+  }
 ];
 
 export const architects = [
-  "Hafeez Contractor","Parushram Reddy","P. Sudheer Reddy","Vinod Bachala",
-  "Debasish Roy","Anwar Aziz","Genesis","Anchuri & Anchuri","Aslam Architects",
-  "Nirup Reddy","Anil Hasan","D. Satyanarayana","M. Srinivas Chary","Madhu",
-  "Mahidhar","Ram Mohan","Ravinder","Satish Bandari","Balaji",
+  "Anil Hasan", "David", "Rachitha", "N. Srinivas Chary",
+  "Mahidhar", "Uday Shankar", "Balaji", "D. Satyanarayana", "M. Srinivas Chary", "Madhu",
+  , "P. Ram Mohan", "Satish Bandari", "Shekhar",
 ];
 
 export const builders = [
-  "Vamshiram Builders","Aparna Constructions","Ashoka Builders","Maheswari Builders",
-  "Bhavya Constructions","Radha Realty Infra Projects Pvt. Ltd","Modi Builders",
-  "My Home Construction","Reliance Builders","ARK Builders",
+  "Jain Builders", "VR Associates",
+  "Hari Villu Constructions",
+];
+
+export const clients = [
+  "Nalanda Schools", "Delhi World School",
+  "Arundoya Printers", "Rajeev Reddy", "TGSPDCL"
 ];
 
 export const services = [
   {
-    icon: Ruler,
+    icon: DraftingCompass,
     num: "01",
+    t: "Architectural Planning",
+    tagline: "Thoughtful spaces designed for function and aesthetics.",
+    d: "Comprehensive architectural planning services that transform ideas into practical, efficient and visually appealing spaces. We develop layouts, floor plans and design concepts that balance functionality, aesthetics and project requirements.",
+    points: [
+      "Conceptual design & space planning",
+      "Floor plans & layout development",
+      "Architectural components(BOQ)",
+      "Functional & aesthetic optimization",
+    ],
+    sectors: ["Residential", "Commercial", "Institutional"],
+  },
+  {
+    icon: Ruler,
+    num: "02",
     t: "Structural Design",
     tagline: "From concept to construction drawings.",
     d: "Complete structural design for all building typologies — from the first layout sketch to fully coordinated GFC drawings with calculations, detailing and BOQ-ready specifications.",
-    points: ["Concept to GFC drawings", "Earthquake & wind load analysis", "BOQ-ready steel & concrete detailing", "Coordination with architectural intent"],
+    points: ["Concept to GFC drawings", "Earthquake & wind load analysis", "BOQ-ready steel & concrete detailing", "Coordination with client"],
     sectors: ["Residential", "Commercial", "Industrial"],
   },
   {
     icon: Building2,
-    num: "02",
+    num: "03",
     t: "RCC Structures",
     tagline: "Reinforced concrete expertise, every typology.",
-    d: "Deep expertise in RCC design for villas, multi-storied apartments, commercial complexes, theatres, temples and industrial buildings. Includes long-span design — our record is a 63-foot pillar-to-pillar structure at Moulali Industrial Area.",
-    points: ["Long-span design up to 63 ft", "High-rise stability analysis", "Foundation & pile design", "Pre-stressed concrete elements"],
+    d: "Deep expertise in RCC design for villas, multi-storied apartments, commercial complexes, theatres, temples and industrial buildings. Includes long-span design — our record is a 90-foot pillar-to-pillar structure for church at Chandrakal.",
+    points: ["Long-span design up to 90 ft", "High-rise structural stability analysis", "Design the footings depending upon soil report", "Pre-stressed concrete elements"],
     sectors: ["Apartments", "Commercial", "Religious", "Hospitality"],
   },
   {
     icon: HardHat,
-    num: "03",
+    num: "04",
     t: "Steel Structures",
     tagline: "Hot-rolled frames built for economy & strength.",
     d: "Steel-frame buildings, mezzanines and industrial structures designed for structural performance, construction economy and long service life.",
@@ -122,43 +183,34 @@ export const services = [
   },
   {
     icon: Factory,
-    num: "04",
+    num: "05",
     t: "PEB Structures",
     tagline: "Pre-engineered buildings & their RCC foundations.",
-    d: "Pre-Engineered Building structural design and RCC foundation engineering for large industrial halls, warehouses and logistics sheds — including crane gantry and long-span roof systems.",
+    d: "Pre-Engineered Building structural design and RCC foundation engineering for large industrial halls, warehouses and logistics sheds — including crane gantry girder and long-span roof systems.",
     points: ["PEB foundation design", "Crane gantry systems", "Long-span industrial sheds", "RCC anchor bolt design"],
     sectors: ["Industrial", "Warehousing", "Logistics"],
   },
   {
     icon: ClipboardCheck,
-    num: "05",
+    num: "06",
     t: "Project Consultancy",
     tagline: "One thread connecting builder, architect & owner.",
     d: "We coordinate between all project stakeholders — builder, architect and landlord — to keep the project moving smoothly without obstacles, delays or miscommunication.",
-    points: ["Stakeholder coordination", "Schedule & milestone management", "Technical risk advisory", "Builder–architect liaison"],
+    points: ["Stakeholder coordination", "Schedule & milestone management", "Technical risk advisory", "Builder–architect coordination"],
     sectors: ["All typologies"],
   },
-  // {
-  //   icon: ShieldCheck,
-  //   num: "06",
-  //   t: "Building Permissions",
-  //   tagline: "GHMC, HMDA & DTCP approvals, end to end.",
-  //   d: "We handle building permission applications with the full suite of Hyderabad's regulatory bodies — from drawing preparation to document submission and approval follow-through.",
-  //   points: ["GHMC / HMDA / DTCP approvals", "Permission drawing preparation", "Document compilation", "Approval follow-up"],
-  //   sectors: ["Residential", "Commercial", "Institutional"],
-  // },
   {
-    icon: Compass,
-    num: "06",
-    t: "Site Supervision",
-    tagline: "Engineering oversight through construction.",
-    d: "Periodic and continuous on-site supervision to ensure that structural execution matches design intent — catching deviations early so they don't become costly corrections.",
-    points: ["Periodic site visits", "Structural quality checks", "Deviation identification", "Contractor guidance"],
-    sectors: ["All typologies"],
+    icon: ShieldCheck,
+    num: "07",
+    t: "Building Permissions",
+    tagline: "GHMC, HMDA & DTCP approvals, end to end.",
+    d: "We handle building permission applications with the full suite of Telangana and Andhra Pradesh's regulatory bodies — from drawing preparation to document submission and approval follow-through.",
+    points: ["GHMC / HMDA / DTCP approvals", "Permission drawing preparation", "Document compilation", "Approval follow-up"],
+    sectors: ["Residential", "Commercial", "Institutional"],
   },
   {
     icon: Sparkles,
-    num: "07",
+    num: "08",
     t: "Vedic Vastu Consultancy",
     tagline: "Traditional spatial alignment, responsibly applied.",
     d: "Vedic Vastu consultancy services by our Managing Partner, P. Vandana Rao — aligning plot orientation, room placement and spatial flow with traditional Vaasthu Shastra principles.",
@@ -168,9 +220,9 @@ export const services = [
 ];
 
 export const structures = [
-  "Villas","Multi-storied Apartments","Commercial Complexes","Industries",
-  "Theatres","Temples & Religious Structures","Hotels & Hospitality",
-  "College Campuses","Hostels & Guest Houses","Bridges","Pre-Stressed Structures",
+  "Gated Community Villas", "Multi-storied Apartments", "Commercial Complexes", "Industrial Buildings",
+  "Multiplex Theatres", "Temples & Religious Structures", "Hotels & Hospitality",
+  "Educational Institutions", "Hostels & Guest Houses", "Farm Houses", "Resorts"
 ];
 
 export const upcomingProjects = [
@@ -216,40 +268,79 @@ export const upcomingProjects = [
   },
 ] as const;
 
- 
+
 
 export const smallServices = [
+  {
+    icon: DraftingCompass,
+    t: "Architectural Planning",
+    d: "Creative and functional architectural planning with efficient space utilization and aesthetic design.",
+    tag: "Design",
+  },
   { icon: Ruler, t: "Structural Design", d: "RCC, Steel & composite design from concept to detail drawings.", tag: "Core" },
-  { icon: Building2, t: "RCC Structures", d: "Multi-storied apartments, commercial complexes, hostels and conventional halls.", tag: "Speciality" },
-  { icon: HardHat, t: "Steel & PEB Structures", d: "Pre-engineered halls, industrial sheds and long-span steel structures up to 63ft span.", tag: "Industrial" },
-  { icon: ClipboardCheck, t: "Project Consultancy", d: "We coordinate between all project stakeholders — builder, architect and landlord — to keep the project moving smoothly without obstacles, delays or miscommunication.", tag: "Advisory" },
-  { icon: Compass, t: "Site Supervision", d: "On-site engineering oversight through the full construction lifecycle.", tag: "Oversight" },
+  {
+    icon: ShieldCheck,
+    t: "Building Permissions",
+    d: "End-to-end assistance for GHMC, HMDA and DTCP approvals, submissions and clearances.",
+    tag: "Compliance",
+  },
+  { icon: Building2, t: "RCC Structures", d: "Multi-storied apartments, commercial complexes, hotels, conventional halls etc.", tag: "Speciality" },
+  {
+    icon: HardHat,
+    t: "Steel Structures",
+    d: "Steel-frame buildings, mezzanines and industrial structures designed for strength and economy.",
+    tag: "Industrial",
+  },
+  {
+    icon: Factory,
+    t: "PEB Structures",
+    d: "Pre-engineered buildings, warehouses and industrial sheds with RCC foundation design.",
+    tag: "Industrial",
+  },
+  { icon: ClipboardCheck, t: "Project Consultancy", d: "We coordinate between all project stakeholders — builder, architect and landlord — to keep the project moving smoothly without delays and miscommunication.", tag: "Advisory" },
   { icon: Sparkles, t: "Vedic Vastu Consultancy", d: "Plans aligned with traditional Vastu principles by our certified consultant.", tag: "Advisory" },
 ];
 
 export const partners = [
-  "Hafeez Contractor","Parushram Reddy","P. Sudheer Reddy","Vamshiram Builders",
-  "Aparna Constructions","Ashoka Builders","Vinod Bachala","Debasish Roy",
-  "Anwar Aziz","Genesis","Anchuri & Anchuri","Aslam Architects","Nirup Reddy",
-  "Maheswari Builders","Bhavya Constructions","Radha Realty Infra","Modi Builders",
-  "My Home Construction","Reliance Builders","ARK Builders",
+  "Jain Builders", "VR Associates",
+  "Hari Villu Constructions",
+  "Anil Hasan", "David", "Rachitha", "N. Srinivas Chary",
+  "Mahidhar", "Uday Shankar", "Balaji", "D. Satyanarayana", "M. Srinivas Chary", "Madhu"
+  , "P. Ram Mohan", "Satish Bandari", "Shekhar", "Nalanda Schools", "Delhi World School",
+  "Arundoya Printers", "Rajeev Reddy", "TGSPDCL"
 ];
+
+export const serviceHighlights = [
+  "RCC Buildings",
+  "Steel Structures",
+  "PEB Structures",
+  "Industrial Buildings",
+] as const;
 
 export const testimonials = [
-  { q: "Their structural detailing gave us confidence on a complex long-span hall — calm, precise, and on schedule.", a: "Architect, Hyderabad" },
-  { q: "A practice that treats every drawing like it bears weight. Aditi has been our structural partner for years.", a: "Builder, Jubilee Hills" },
-  { q: "From permissions to site supervision — one continuous, dependable thread.", a: "Developer, Kacheguda" },
+  {
+    q: "In the complex world of building construction, finding a consultant with genuine structural expertise is vital. Aditi Consultants has been an invaluable partner in our recent projects. Their ability to translate complicated engineering requirements into elegant, functional designs is unmatched. A special mention to Mr. P. Venkateshwara Rao, whose deep knowledge and meticulous attention to detail ensured that every phase of construction was both safe and aesthetically sound. If you are looking for a consultant who brings technical brilliance and a proactive approach to the table, I cannot recommend them highly enough.",
+    a: "Rahul Sancheti • Capital, Plastoform Solutions",
+  },
+  {
+    q: "Following a major fire incident at the Thomas Cook office in Saifabad, we sought structural assessment support. Mr. P. V. Rao promptly inspected the site, coordinated with the insurance team, and delivered a professional report that greatly assisted the insurance claim process. I strongly recommend Aditi Consultants for structural investigations and technical reports.",
+    a: "Anup Agarwal • Shree Basai Enterprises / Choice Decors",
+  },
+  {
+    q: "Mr. P. V. Rao facilitated an important industry connection with NFDB officials, leading to valuable discussions and ultimately our empanelment as an approved vendor. His professional network, commitment, and support created significant growth opportunities for our organization. We remain grateful for his contribution and guidance.",
+    a: "Sirisha Adepu • ABROGATE Technologies Pvt. Ltd.",
+  },
+]
+
+export const commonQuestions = [
+  { q: "When do you come in?", a: "Before construction begins — ideally during plot planning, before architectural drawings are finalised and before permissions are applied for." },
+  { q: "How long does a structural design take?", a: "For a standard residential project, typically 2–3 weeks from brief to GFC drawings. Complex commercial or PEB structures may require more time." },
+  { q: "Do you handle building permissions?", a: "Yes — we manage end-to-end GHMC, HMDA and DTCP approvals, from drawing preparation to document submission and follow-up." },
+  { q: "What is your coverage area?", a: "Primarily Hyderabad and Telangana, with select projects in Andhra Pradesh (Kalikiri Campus) and Tamil Nadu (Madurai Airport)." },
+  { q: "Do you offer Vaasthu consultancy?", a: "Yes, Vaasthu consultancy is offered by our Managing Partner P. Vandana Rao — including plot evaluation, plan alignment and practical remedies." },
 ];
 
- export const commonQuestions = [
-    { q: "When do you come in?", a: "Before construction begins — ideally during plot planning, before architectural drawings are finalised and before permissions are applied for." },
-    { q: "How long does a structural design take?", a: "For a standard residential project, typically 2–3 weeks from brief to GFC drawings. Complex commercial or PEB structures may require more time." },
-    { q: "Do you handle building permissions?", a: "Yes — we manage end-to-end GHMC, HMDA and DTCP approvals, from drawing preparation to document submission and follow-up." },
-    { q: "What is your coverage area?", a: "Primarily Hyderabad and Telangana, with select projects in Andhra Pradesh (Kalikiri Campus) and Tamil Nadu (Madurai Airport)." },
-    { q: "Do you offer Vaasthu consultancy?", a: "Yes, Vaasthu consultancy is offered by our Managing Partner P. Vandana Rao — including plot evaluation, plan alignment and practical remedies." },
-  ];
-
-  export const projectTypes = [
+export const projectTypes = [
   "Residential",
   "Villa",
   "Apartment",
@@ -259,4 +350,25 @@ export const testimonials = [
   "Hotel",
   "Institutional",
   "Other",
+] as const;
+
+export const usps = [
+  {
+    glyph: "✦",
+    label: "Vastu-Compliant by Design",
+    desc: "Every architectural and structural plan is developed with Vastu Shastra principles integrated from the first drawing — not retrofitted afterward. Spatial orientation, room placements and structural axes are all Vastu-aligned, guided by our Managing Partner P. Vandana Rao.",
+    tag: "Vedic Vastu",
+  },
+  {
+    glyph: "⬡",
+    label: "Large-Span Structural Expertise",
+    desc: "Experienced in engineering large-span structures, ensuring adequate pillar spacing and robust structural performance to create open, flexible, and durable internal spaces.",
+    tag: "90 ft Record Span",
+  },
+  {
+    glyph: "◈",
+    label: "Parking-Optimized Column Layouts",
+    desc: "Columns are strategically positioned to maximize parking efficiency and vehicle maneuverability, reducing obstructions while maintaining structural strength and safety.",
+    tag: "Space Optimization",
+  },
 ] as const;

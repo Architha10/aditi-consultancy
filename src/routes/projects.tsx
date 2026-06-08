@@ -1,12 +1,3 @@
-/**
- * src/routes/projects.tsx
- *
- * Changes from original:
- *  1. Project DATA moved to  src/data/projects-data.ts
- *  2. ProjectCard is now clickable  → opens ProjectDetailModal
- *  3. useState<Project | null> tracks the selected project
- *  4. ProjectDetailModal rendered once at page level
- */
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
@@ -15,7 +6,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import blueprint from "@/assets/blueprint-bg.jpg";
 
 import type { Project } from "@/types/project";
-import { cats, projectsData, statusStyle, upcomingPipeline, type Cat, type Status } from "#/assets/data/project-data";
+import { cats, projectsData, statusStyle, type Cat, type Status } from "#/assets/data/project-data";
 import { ProjectDetailModal } from "#/components/projects/project-detail-modal";
 
 /* ─── PALETTE
@@ -42,13 +33,6 @@ export const Route = createFileRoute("/projects")({
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 function Hero() {
-  const completedCount = projectsData.filter(
-    (p) => p.status === "Completed"
-  ).length;
-  const ongoingCount = projectsData.filter(
-    (p) => p.status === "Ongoing"
-  ).length;
-
   return (
     <section className="relative overflow-hidden" style={{ background: "#FEFAF7" }}>
       <img
@@ -90,10 +74,10 @@ function Hero() {
                 color: "#000",
               }}
             >
-              Selected
+              Some of the
               <br />
               <em className="not-italic" style={{ color: "#154D57" }}>
-                works
+                projects
               </em>
               .
             </h1>
@@ -103,7 +87,7 @@ function Hero() {
               className="text-base leading-relaxed mb-5"
               style={{ color: "#6b6057" }}
             >
-              Five sectors, 120+ structures — each one a commitment to
+              Five sectors, 1500+ projects — each one a commitment to architectural planning, 
               structural integrity and careful engineering, built across
               Hyderabad and beyond over 26 years.
             </p>
@@ -127,9 +111,8 @@ function Hero() {
             </div>
           </div>
         </div>
-
         {/* Stats */}
-        <div
+        {/* <div
           className="mt-16 pt-8 border-t grid grid-cols-2 sm:grid-cols-4 gap-6"
           style={{ borderColor: "#e4dbd2" }}
         >
@@ -158,7 +141,7 @@ function Hero() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -384,109 +367,109 @@ function ProjectGrid({
 }
 
 /* ─── UPCOMING PIPELINE ─────────────────────────────────────────── */
-function UpcomingPipeline() {
-  return (
-    <section style={{ background: "#FEFAF7" }} className="py-28 md:py-40">
-      <div className="mx-auto max-w-7xl px-8 md:px-14">
-        <div className="grid md:grid-cols-12 gap-12 items-start">
-          {/* Left text */}
-          <div className="md:col-span-4">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-8" style={{ background: "#154D57" }} />
-              <span
-                className="text-[10px] uppercase tracking-[0.35em]"
-                style={{ color: "#154D57" }}
-              >
-                On Our Drawing Boards
-              </span>
-            </div>
-            <h2
-              className="leading-[1.06] mb-5"
-              style={{
-                fontFamily: "Georgia,serif",
-                fontSize: "clamp(2rem,3.2vw,2.8rem)",
-                color: "#000",
-              }}
-            >
-              Upcoming
-              <br />
-              <em className="not-italic" style={{ color: "#154D57" }}>
-                projects
-              </em>
-              .
-            </h2>
-            <p
-              className="text-sm leading-relaxed mb-8"
-              style={{ color: "#6b6057" }}
-            >
-              A snapshot of structures currently in planning across Hyderabad
-              and beyond — including commercial complexes, pharma buildings,
-              hospitality and institutional projects.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition hover:opacity-90"
-              style={{ background: "#154D57", color: "#FEFAF7" }}
-            >
-              Discuss a project <ArrowUpRight size={15} />
-            </Link>
-          </div>
+// function UpcomingPipeline() {
+//   return (
+//     <section style={{ background: "#FEFAF7" }} className="py-28 md:py-40">
+//       <div className="mx-auto max-w-7xl px-8 md:px-14">
+//         <div className="grid md:grid-cols-12 gap-12 items-start">
+//           {/* Left text */}
+//           <div className="md:col-span-4">
+//             <div className="flex items-center gap-3 mb-5">
+//               <div className="h-px w-8" style={{ background: "#154D57" }} />
+//               <span
+//                 className="text-[10px] uppercase tracking-[0.35em]"
+//                 style={{ color: "#154D57" }}
+//               >
+//                 On Our Drawing Boards
+//               </span>
+//             </div>
+//             <h2
+//               className="leading-[1.06] mb-5"
+//               style={{
+//                 fontFamily: "Georgia,serif",
+//                 fontSize: "clamp(2rem,3.2vw,2.8rem)",
+//                 color: "#000",
+//               }}
+//             >
+//               Upcoming
+//               <br />
+//               <em className="not-italic" style={{ color: "#154D57" }}>
+//                 projects
+//               </em>
+//               .
+//             </h2>
+//             <p
+//               className="text-sm leading-relaxed mb-8"
+//               style={{ color: "#6b6057" }}
+//             >
+//               A snapshot of structures currently in planning across Hyderabad
+//               and beyond — including commercial complexes, pharma buildings,
+//               hospitality and institutional projects.
+//             </p>
+//             <Link
+//               to="/contact"
+//               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition hover:opacity-90"
+//               style={{ background: "#154D57", color: "#FEFAF7" }}
+//             >
+//               Discuss a project <ArrowUpRight size={15} />
+//             </Link>
+//           </div>
 
-          {/* Right list */}
-          <div className="md:col-span-8">
-            <div
-              className="rounded-3xl overflow-hidden border"
-              style={{ background: "#FFFFFF", borderColor: "#e4dbd2" }}
-            >
-              {upcomingPipeline.map((u, i) => (
-                <div
-                  key={u.t + u.loc}
-                  className="flex items-center justify-between px-8 py-5 border-b transition-colors hover:bg-[#FEFAF7]"
-                  style={{ borderColor: "#e4dbd2" }}
-                >
-                  <div className="flex items-start gap-5">
-                    <span
-                      className="text-[10px] font-mono mt-0.5 shrink-0"
-                      style={{ color: "#B7A08B" }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <div
-                        className="text-sm font-medium"
-                        style={{ color: "#000" }}
-                      >
-                        {u.t}
-                      </div>
-                      <div className="flex items-center gap-1.5 mt-0.5">
-                        <MapPin size={10} style={{ color: "#B7A08B" }} />
-                        <span
-                          className="text-[11px]"
-                          style={{ color: "#B7A08B" }}
-                        >
-                          {u.loc}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <span
-                    className="text-[9px] uppercase tracking-[0.22em] px-3 py-1.5 rounded-full shrink-0 ml-4"
-                    style={{
-                      background: "rgba(21,77,87,0.07)",
-                      color: "#154D57",
-                    }}
-                  >
-                    Upcoming
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//           {/* Right list */}
+//           <div className="md:col-span-8">
+//             <div
+//               className="rounded-3xl overflow-hidden border"
+//               style={{ background: "#FFFFFF", borderColor: "#e4dbd2" }}
+//             >
+//               {upcomingPipeline.map((u, i) => (
+//                 <div
+//                   key={u.t + u.loc}
+//                   className="flex items-center justify-between px-8 py-5 border-b transition-colors hover:bg-[#FEFAF7]"
+//                   style={{ borderColor: "#e4dbd2" }}
+//                 >
+//                   <div className="flex items-start gap-5">
+//                     <span
+//                       className="text-[10px] font-mono mt-0.5 shrink-0"
+//                       style={{ color: "#B7A08B" }}
+//                     >
+//                       {String(i + 1).padStart(2, "0")}
+//                     </span>
+//                     <div>
+//                       <div
+//                         className="text-sm font-medium"
+//                         style={{ color: "#000" }}
+//                       >
+//                         {u.t}
+//                       </div>
+//                       <div className="flex items-center gap-1.5 mt-0.5">
+//                         <MapPin size={10} style={{ color: "#B7A08B" }} />
+//                         <span
+//                           className="text-[11px]"
+//                           style={{ color: "#B7A08B" }}
+//                         >
+//                           {u.loc}
+//                         </span>
+//                       </div>
+//                     </div>
+//                   </div>
+//                   <span
+//                     className="text-[9px] uppercase tracking-[0.22em] px-3 py-1.5 rounded-full shrink-0 ml-4"
+//                     style={{
+//                       background: "rgba(21,77,87,0.07)",
+//                       color: "#154D57",
+//                     }}
+//                   >
+//                     Upcoming
+//                   </span>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ─── CTA ───────────────────────────────────────────────────────── */
 function CTA() {
@@ -519,13 +502,13 @@ function CTA() {
                 lineHeight: 1.1,
               }}
             >
-              Have a structure in mind?
+              Have a project in mind?
             </h3>
             <p
               className="mt-3 text-sm leading-relaxed max-w-md"
               style={{ color: "rgba(254,250,247,0.60)" }}
             >
-              Tell us about your project and we'll outline the structural
+              Tell us about your project and we'll outline the structural and architectural
               approach — before construction begins.
             </p>
           </div>
@@ -580,7 +563,7 @@ function ProjectsPage() {
         </div>
       </section>
 
-      <UpcomingPipeline />
+      {/* <UpcomingPipeline /> */}
       <CTA />
 
       {/* Modal — rendered once at page root; shown when a project is selected */}

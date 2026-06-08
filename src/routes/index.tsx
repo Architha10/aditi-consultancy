@@ -51,10 +51,11 @@ function Hero() {
       />
 
       <div className="mx-auto max-w-7xl px-8 md:px-14 pt-20 md:pt-28 pb-24 md:pb-36">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
 
-          {/* LEFT — text */}
-          <div className="lg:col-span-6 xl:col-span-5">
+          {/* LEFT — full column as flex-col */}
+          <div className="lg:col-span-6 xl:col-span-5 flex flex-col">
+
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-10" style={{ background: "#154D57" }} />
@@ -62,45 +63,44 @@ function Hero() {
                 className="text-[10px] uppercase tracking-[0.38em] font-medium"
                 style={{ color: "#154D57" }}
               >
-                Structural & Project Consultants · Hyderabad
+                Architectural, Structural & Project Management Consultants · Hyderabad
               </span>
             </div>
 
-            {/* Headline */}
+            {/* Headline — IMAGE TOP aligns here */}
             <h1
               className="leading-[0.96] tracking-tight"
               style={{
                 fontFamily: "Georgia, 'Times New Roman', serif",
-                fontSize: "clamp(3.2rem, 6vw, 5.8rem)",
+                fontSize: "clamp(2.2rem, 4vw, 4rem)",
                 color: "#000000",
               }}
             >
-              Engineering
+              Architectural Planning
               <br />
-              <em
-                className="not-italic"
-                style={{ color: "#154D57" }}
-              >
-                strength
+              &
+              <br />
+              <em className="not-italic" style={{ color: "#154D57" }}>
+                Structural Designing
               </em>
               <br />
-              into every
+              strength into every
               <br />
-              structure.
+              project.
             </h1>
 
             <p
               className="mt-8 text-base leading-relaxed max-w-md"
               style={{ color: "#6b6057" }}
             >
-              26+ years of meticulous structural excellence in residential,
-              commercial and industrial projects — responsible, precise and
+              26+ years of meticulous Architectural and Structural excellence in residential,
+              commercial, multiplex theatres, multi-storied apartments and industrial projects — responsible, precise and
               quietly enduring.
             </p>
 
-            {/* Spec pills */}
+            {/* Spec pills — IMAGE BOTTOM aligns here */}
             <div className="mt-7 flex flex-wrap gap-2">
-              {["RCC", "Steel", "PEB", "Pre-Stressed", "Bridge"].map((s) => (
+              {["RCC Buildings", "Steel Structures", "PEB Structures", "Industrial Buildings"].map((s) => (
                 <span
                   key={s}
                   className="px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium border"
@@ -131,46 +131,80 @@ function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — image + floating cards */}
-          <div className="lg:col-span-6 xl:col-span-7 relative">
+          {/* RIGHT — flex col with top + bottom invisible spacers to bracket the image */}
+          <div className="lg:col-span-6 xl:col-span-7 flex flex-col relative">
+
+            {/* TOP spacer: mirrors eyebrow → image top aligns with h1 */}
             <div
-              className="relative rounded-3xl overflow-hidden shadow-2xl"
-              style={{ aspectRatio: "4/3" }}
+              className="flex items-center gap-3 mb-8 opacity-0 pointer-events-none select-none"
+              aria-hidden="true"
             >
-              <img
-                src={hero}
-                alt="Modern structure by Aditi Consultants"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "80% center" }}
-              />
-              {/* Teal gradient foot */}
+              <div className="h-px w-10" />
+              <span className="text-[10px] uppercase tracking-[0.38em] font-medium">
+                Architectural, Structural & Project Management Consultants · Hyderabad
+              </span>
+            </div>
+
+            {/* Image + year badge wrapped in a relative container */}
+            <div className="relative">
+              {/* Image — ORIGINAL: aspectRatio 4/3, object-cover, objectPosition unchanged */}
               <div
-                className="absolute inset-x-0 bottom-0 h-2/5"
-                style={{ background: "linear-gradient(to top, rgba(21,77,87,0.72), transparent)" }}
-              />
-              {/* Bottom caption */}
-              <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between text-white">
-                <div>
-                  <div style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem" }}>
-                    Anvaya Villa
+                className="relative rounded-3xl overflow-hidden shadow-2xl"
+                style={{ aspectRatio: "4/3" }}
+              >
+                <img
+                  src={hero}
+                  alt="Modern structure by Aditi Consultants"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "80% center" }}
+                />
+                {/* Teal gradient foot */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-2/5"
+                  style={{ background: "linear-gradient(to top, rgba(21,77,87,0.72), transparent)" }}
+                />
+                {/* Bottom caption */}
+                <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between text-white">
+                  <div>
+                    <div className="uppercase" style={{ fontFamily: "Georgia, serif", fontSize: "1.4rem" }}>
+                      Anvaya Villas
+                    </div>
+                    <div style={{ fontFamily: "Georgia, serif", fontSize: "1.0rem" }}>
+                      Club House
+                    </div>
+                  </div>
+                  <div
+                    className="w-9 h-9 rounded-full grid place-items-center border border-white/30"
+                    style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(6px)" }}
+                  >
+                    <ArrowUpRight size={14} />
                   </div>
                 </div>
-                <div
-                  className="w-9 h-9 rounded-full grid place-items-center border border-white/30"
-                  style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(6px)" }}
-                >
-                  <ArrowUpRight size={14} />
-                </div>
+              </div>
+
+              {/* Floating year badge — original position */}
+              <div
+                className="absolute -right-4 -bottom-5 rounded-2xl px-5 py-4 shadow-xl hidden md:block"
+                style={{ background: "#154D57" }}
+              >
+                <div className="text-[9px] uppercase tracking-[0.28em]" style={{ color: "rgba(255,255,255,0.5)" }}>Established</div>
+                <div style={{ fontFamily: "Georgia, serif", fontSize: "2rem", color: "#FEFAF7", lineHeight: 1.1 }}>2001</div>
               </div>
             </div>
 
-            {/* Floating year badge — bottom right */}
-            <div
-              className="absolute -right-4 -bottom-5 rounded-2xl px-5 py-4 shadow-xl hidden md:block"
-              style={{ background: "#154D57" }}
-            >
-              <div className="text-[9px] uppercase tracking-[0.28em]" style={{ color: "rgba(255,255,255,0.5)" }}>Est.</div>
-              <div style={{ fontFamily: "Georgia, serif", fontSize: "2rem", color: "#FEFAF7", lineHeight: 1.1 }}>2001</div>
+            {/* BOTTOM spacer: mirrors paragraph + pills so image bottom = pills bottom */}
+            <div className="opacity-0 pointer-events-none select-none" aria-hidden="true">
+              <p className="mt-8 text-base leading-relaxed max-w-md">
+                26+ years of meticulous Architectural and Structural excellence in residential,
+                commercial and industrial projects — responsible, precise and quietly enduring.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {["RCC Buildings", "Steel Structures", "PEB Structures", "Industrial Buildings"].map((s) => (
+                  <span key={s} className="px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium border">
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -182,8 +216,8 @@ function Hero() {
         >
           {[
             { v: "26+", l: "Years of Practice" },
-            { v: "120+", l: "Structures Engineered" },
-            { v: "5", l: "Sectors Served" },
+            { v: "1500+", l: "Architectural and Structural Projects" },
+            { v: "6+", l: "Years of Vedic Vastu Experience" },
             { v: "01", l: "Standard — Uncompromised" },
           ].map((s) => (
             <div key={s.l}>
@@ -201,7 +235,7 @@ function Hero() {
         <div className="mt-16 pt-10 border-t" style={{ borderColor: "#e4dbd2" }}>
           <div className="mb-7 text-center">
             <span className="text-[10.5px] uppercase tracking-[0.38em]" style={{ color: "#154D57" }}>
-              Trusted by leading builders & architects
+              Trusted by leading builders, architects & clients
             </span>
           </div>
           <div style={{ maskImage: "linear-gradient(to right, transparent, #000 10%, #000 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, #000 10%, #000 90%, transparent)", overflow: "hidden" }}>
@@ -249,7 +283,7 @@ function Intro() {
           </h2>
           <p className="mt-6 leading-relaxed" style={{ color: "#6b6057", fontSize: "0.97rem" }}>
             Founded by Chief Consultant P. Venkateshwara Rao (M.E. Structures, BITS Pilani), with GHMC
-            License No. 166/Stru.Engr./TP10/MCH and 26 years of experience including association with
+            License Holder and 26 years of experience including association with
             IIT Madras and J.J. Associates.
           </p>
           <blockquote
@@ -296,7 +330,7 @@ function Intro() {
             <div className="mt-1.5" style={{ fontFamily: "Georgia, serif", fontSize: "1.1rem", color: "#FEFAF7", lineHeight: 1.3 }}>
               P. Venkateshwara Rao
             </div>
-            <div className="mt-1 text-[10px]" style={{ color: "#B7A08B" }}>M.E. Structures · BITS Pilani</div>
+            <div className="mt-1 text-[11px]" style={{ color: "#B7A08B",fontWeight:'bold' }}>M.E. Structures · BITS Pilani</div>
           </div>
           {/* Taupe corner accent */}
           <div
@@ -405,7 +439,7 @@ function Testimonials() {
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-3">
                 <div className="h-px flex-1" style={{ background: "rgba(183,160,139,0.3)" }} />
-                <span className="text-[10px] uppercase tracking-[0.25em]" style={{ color: "rgba(183,160,139,0.7)" }}>
+                <span className="text-[10px] uppercase tracking-[0.25em]" style={{ color: "#B7A08B", fontWeight:'bold' }}>
                   — {t.a}
                 </span>
               </figcaption>
@@ -444,13 +478,12 @@ function CTA() {
               <h2
                 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2.2rem,4vw,3.8rem)", color: "#FEFAF7", lineHeight: 1.05 }}
               >
-                Tell us about the structure
+                Let's build your
                 <br />
-                you're <em className="not-italic" style={{ color: "#B7A08B" }}>imagining</em>.
+              <em className="not-italic" style={{ color: "#B7A08B" }}>dream space</em>.
               </h2>
               <p className="mt-5 max-w-lg leading-relaxed" style={{ color: "rgba(254,250,247,0.65)", fontSize: "0.95rem" }}>
                 A short conversation is often enough to chart the structural direction of your project.
-                Book a consultation with Chief Consultant P. Venkateshwara Rao.
               </p>
             </div>
             <div className="lg:col-span-4 flex lg:justify-end gap-3 flex-wrap">

@@ -581,7 +581,7 @@ function MainSection() {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-4">
+              {/* <li className="flex items-start gap-4">
                 <div
                   className="w-10 h-10 rounded-xl grid place-items-center shrink-0"
                   style={{ background: "rgba(21,77,87,0.09)" }}
@@ -602,7 +602,7 @@ function MainSection() {
                     P. Venkateshwara Rao, Structural Engineer
                   </p>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -652,7 +652,7 @@ function MainSection() {
           {/* Map */}
           <div
             className="rounded-3xl overflow-hidden"
-            style={{ height: "340px", border: "1.5px solid #e4dbd2" }}
+            style={{ height: "440px", border: "1.5px solid #e4dbd2" }}
           >
             <iframe
               title="Aditi Consultants office — Srinagar Colony, Hyderabad"

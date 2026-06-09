@@ -631,7 +631,7 @@ function MainSection() {
           >
             <iframe
               title="Aditi Consultants office — Srinagar Colony, Hyderabad"
-              src="https://www.google.com/maps?q=8-2-1/6-C+Srinagar+Colony+Road+Hyderabad+500082&output=embed"
+              src={import.meta.env.VITE_MAP_URL}
               loading="lazy"
               className="w-full h-full"
               style={{ filter: "saturate(0.6) contrast(1.05)" }}

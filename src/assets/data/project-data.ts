@@ -53,21 +53,25 @@ import fhImg7 from "@/assets/projects/feba-homes/img7.jpg";
 import fhImg8 from "@/assets/projects/feba-homes/img8.jpg";
 import fhImg9 from "@/assets/projects/feba-homes/img9.jpg"
 
+import krImg1 from "@/assets/projects/karamchedu-residency/img1.jpeg";
+import krImg2 from "@/assets/projects/karamchedu-residency/img2.jpeg";
+
 import pApcpdclOffice from "@/assets/projects/APCPDCL/coporate_office_hyd.jpeg";
 import pApcpdclClub from "@/assets/projects/APCPDCL/recreation_club_hyd.jpeg";
 
-import pHowardSchool     from "@/assets/projects/howard_lake_view_school_gachibowli.jpeg";
-import pNalagandla       from "@/assets/projects/nalagandla_elevation.jpeg";
+import pHowardSchool from "@/assets/projects/howard_lake_view_school_gachibowli.jpeg";
+import pNalagandla from "@/assets/projects/nalagandla_elevation.jpeg";
 import pPvSatishGodavari from "@/assets/projects/pv_satish_kumar_east_godavari.jpeg";
-import pRamanthpur       from "@/assets/projects/ramanthpur_elevation.jpeg";
-import pResidentialDsnr  from "@/assets/projects/residential_apartment_dsnr.jpeg";
-import pResidentialHyd   from "@/assets/projects/residential_apartment_hyd.jpeg";
-import pBuildingAttapur  from "@/assets/projects/residential_building_attapur_hyd.jpeg";
-import pBuildingBhel     from "@/assets/projects/residential_building_bhel_hyd.jpeg";
-import pBuildingGach     from "@/assets/projects/residential_building_gachibowli_hyd.jpeg";
-import pBuildingRam      from "@/assets/projects/residential_building_ramanthpur.jpeg";
-import pBuildingSainik   from "@/assets/projects/residential_building_sainikpuri_secunderabad.jpeg";
+import pRamanthpur from "@/assets/projects/ramanthpur_elevation.jpeg";
+import pResidentialDsnr from "@/assets/projects/residential_apartment_dsnr.jpeg";
+import pResidentialHyd from "@/assets/projects/residential_apartment_hyd.jpeg";
+import pBuildingAttapur from "@/assets/projects/residential_building_attapur_hyd.jpeg";
+import pBuildingBhel from "@/assets/projects/residential_building_bhel_hyd.jpeg";
+import pBuildingGach from "@/assets/projects/residential_building_gachibowli_hyd.jpeg";
+import pBuildingRam from "@/assets/projects/residential_building_ramanthpur.jpeg";
+import pBuildingSainik from "@/assets/projects/residential_building_sainikpuri_secunderabad.jpeg";
 import pBuildingSecunder from "@/assets/projects/residential_building_secunderabad.jpeg";
+import pMeditationHallBowenpally from "@/assets/projects/meditation-hall-bowenpally.jpeg";
 
 export const projectsData: Project[] = [
 
@@ -89,6 +93,31 @@ export const projectsData: Project[] = [
     ],
     gallery: [
       { src: pTemple, caption: "Front elevation — Gopuram" },
+    ],
+  },
+  {
+    title: "Karamchedu Residency",
+    loc: "Karamchedu, Andhra Pradesh",
+    cat: "Residential",
+    status: "Ongoing",
+    description:
+      "A contemporary residential apartment development designed to maximize natural ventilation, daylight penetration, and efficient floor planning. The project combines modern architectural aesthetics with a durable reinforced concrete structural system suitable for long-term residential use.",
+    highlights: [
+      "G+5 residential apartment configuration",
+      "Efficient structural grid for optimized unit layouts",
+      "Ample natural lighting and cross-ventilation",
+      "Dedicated stilt parking and service areas",
+      "Earthquake-resistant RCC structural design",
+    ],
+    gallery: [
+      {
+        src: krImg1,
+        caption: "Front elevation view",
+      },
+      {
+        src: krImg2,
+        caption: "Architectural perspective",
+      },
     ],
   },
 
@@ -582,6 +611,27 @@ export const projectsData: Project[] = [
       { src: pBrewdog, caption: "Concept elevation — Jubilee Hills" },
     ],
   },
+  {
+    title: "Meditation Hall",
+    loc: "Bowenpally, Secunderabad, Telangana",
+    cat: "Commercial",
+    status: "Ongoing",
+    description:
+      "A dedicated meditation and wellness facility currently under development at Bowenpally. Aditi Consultants is providing comprehensive architectural planning and structural planning services, creating a serene, spacious, and structurally efficient environment for meditation, spiritual gatherings, and community activities.",
+    highlights: [
+      "Complete architectural planning and design development",
+      "Structural planning and RCC design",
+      "Large unobstructed meditation hall layout",
+      "Natural lighting and cross-ventilation strategy",
+      "Optimized circulation and utility planning",
+    ],
+    gallery: [
+      {
+        src: pMeditationHallBowenpally,
+        caption: "Meditation Hall — Bowenpally",
+      },
+    ],
+  },
 
   {
     title: "Residential Apartment",
@@ -686,7 +736,7 @@ export type Cat =
   | "Residential"
   | "Educational"
   | "Religious"
-  | "Hospitality"|"Farm Houses";
+  | "Hospitality" | "Farm Houses";
 export type Status = "Completed" | "Ongoing" | "Upcoming";
 
 export const cats: Cat[] = [

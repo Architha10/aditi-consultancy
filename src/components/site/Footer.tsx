@@ -178,13 +178,18 @@ export function Footer() {
                   <Phone size={13} style={{ color: "#B7A08B" }} />
                 </div>
                 <a
-                  href="tel:+919246270133"
+                  href={`tel:+91${site.contact.phones[1]}`}
                   className="text-sm transition-colors"
                   style={{ color: "rgba(254,250,247,0.60)" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FEFAF7"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(254,250,247,0.60)"; }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = "#FEFAF7";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.color =
+                      "rgba(254,250,247,0.60)";
+                  }}
                 >
-                  +91 92462 70133
+                  +91 {site.contact.phones[1]}
                 </a>
               </li>
               <li className="flex items-center gap-3">

@@ -34,7 +34,6 @@ export const leadSchema = z.object({
   projectType: z.string().min(1, "Select a project type"),
   service: z.string().min(1, "Select a service"),
   areaSqFt: z.string().optional(),
-  packageInterest: z.string().optional(),
   message: z.string().optional(),
   location:z.string().optional(),
  
@@ -149,7 +148,6 @@ const INITIAL_FORM: LeadFormData = {
   phone: "",
   location: "",
   areaSqFt: "",
-  packageInterest: "",
   service: "",
   message: "",
   projectType: "Residential",
@@ -204,7 +202,6 @@ function MainSection() {
       service: formData.service,
       projectType: formData.projectType,
       areaSqFt: formData.areaSqFt ?? "",
-      packageInterest: formData.packageInterest ?? "",
       message: formData.message ?? "",
     });
 
@@ -319,14 +316,14 @@ function MainSection() {
                     error={errors.areaSqFt}
                   />
 
-                  <Field
+                  {/* <Field
                     label="Package Interest"
                     name="packageInterest"
                     placeholder="Premium"
                     value={formData.packageInterest ?? ""}
                     onChange={(v) => setField("packageInterest", v)}
                     error={errors.packageInterest}
-                  />
+                  /> */}
                 </div>
 
                 {/* Project Type */}
@@ -581,34 +578,12 @@ function MainSection() {
                   </a>
                 </div>
               </li>
-              {/* <li className="flex items-start gap-4">
-                <div
-                  className="w-10 h-10 rounded-xl grid place-items-center shrink-0"
-                  style={{ background: "rgba(21,77,87,0.09)" }}
-                >
-                  <Building2 size={16} style={{ color: "#154D57" }} />
-                </div>
-                <div>
-                  <div
-                    className="text-[10px] uppercase tracking-[0.22em] mb-1"
-                    style={{ color: "#B7A08B" }}
-                  >
-                    GHMC License
-                  </div>
-                  <p className="text-sm font-mono" style={{ color: "#3a3530" }}>
-                    166/Stru.Engr./TP10/MCH
-                  </p>
-                  <p className="text-xs mt-0.5" style={{ color: "#B7A08B" }}>
-                    P. Venkateshwara Rao, Structural Engineer
-                  </p>
-                </div>
-              </li> */}
             </ul>
           </div>
 
           {/* WhatsApp CTA */}
           <a
-            href="https://wa.me/919246270133"
+             href={`https://wa.me/91${site.contact.phones?.[1]}`}
             target="_blank"
             rel="noreferrer"
             className="group rounded-3xl p-6 flex items-center justify-between transition-all hover:-translate-y-0.5"

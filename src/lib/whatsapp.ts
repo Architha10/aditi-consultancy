@@ -1,5 +1,5 @@
 const PRIMARY =
-  process.env.NEXT_PUBLIC_WHATSAPP_PRIMARY ?? "919182455059";
+  import.meta.env.VITE_WHATSAPP_PRIMARY; 
 
 export function buildWhatsAppUrl(message: string, phone = PRIMARY): string {
   const encoded = encodeURIComponent(message);
@@ -27,7 +27,6 @@ export function buildLeadWhatsAppMessage(data: {
   lines.push(`Service: ${data.service}`);
   if (data.areaSqFt) lines.push(`Area: ${data.areaSqFt} sq ft`);
   if (data.location) lines.push(`Location: ${data.location}`);
-  if (data.packageInterest) lines.push(`Package: ${data.packageInterest}`);
   if (data.message) lines.push(`Message: ${data.message}`);
   return lines.join("\n");
 }

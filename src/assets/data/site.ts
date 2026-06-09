@@ -1,4 +1,4 @@
-import { Building2, ClipboardCheck, Compass, DraftingCompass, Factory, HardHat, Ruler, ShieldCheck, Sparkles } from "lucide-react";
+import { Building2, ClipboardCheck, DraftingCompass, Factory, HardHat, Ruler, ShieldCheck, Sparkles } from "lucide-react";
 
 export const site = {
   name: "Aditi Consultants",
@@ -6,8 +6,8 @@ export const site = {
   tagline2: "Designing Strength",
   foundedYear: 2001,
   contact: {
-    email: "aditiconsultants3@gmail.com",
-    phones: ["9182455059", "9246270133"],
+    email: import.meta.env.VITE_EMAIL_PRIMARY,
+    phones: [import.meta.env.VITE_WHATSAPP_PRIMARY, import.meta.env.VITE_WHATSAPP_SECONDARY],
     address:
       "8-2-1/6-c, Opposite AXIS Bank, Srinagar Colony Road, Hyderabad – 500082",
   },

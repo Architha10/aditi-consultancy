@@ -8,7 +8,6 @@ import {
   MessageCircle,
   ArrowUpRight,
   Check,
-  Building2,
   AlertCircle,
 } from "lucide-react";
 import {
@@ -22,7 +21,6 @@ import {
   buildWhatsAppUrl,
 } from "#/lib/whatsapp";
 import { z } from "zod";
-// import type { leadSchema } from "#/lib/lead-schema";
 
 export const leadSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -583,7 +581,7 @@ function MainSection() {
 
           {/* WhatsApp CTA */}
           <a
-             href={`https://wa.me/91${site.contact.phones?.[1]}`}
+            href={`https://wa.me/91${site.contact.phones?.[1]}`}
             target="_blank"
             rel="noreferrer"
             className="group rounded-3xl p-6 flex items-center justify-between transition-all hover:-translate-y-0.5"

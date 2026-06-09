@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import blueprint from "@/assets/blueprint-bg.jpg";
-import { services, structures, packages, serviceHighlights, usps } from "#/assets/data/site";
+import { services, structures, packages, serviceHighlights, usps, site } from "#/assets/data/site";
 import { ArrowUpRight, Check } from "lucide-react";
 
 /* ─── PALETTE
@@ -951,7 +951,7 @@ function CTA() {
               Book Consultation <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://wa.me/919246270133"
+              href={`https://wa.me/91${site.contact.phones?.[1]}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm border-2 transition hover:opacity-80"

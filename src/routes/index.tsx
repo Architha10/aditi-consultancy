@@ -9,7 +9,7 @@ import {
   MapPin,
   Users,
 } from "lucide-react";
-import { partners, smallServices, testimonials } from "#/assets/data/site";
+import { partners, site, smallServices, testimonials } from "#/assets/data/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -495,7 +495,7 @@ function CTA() {
                 Book Consultation <ArrowUpRight size={15} />
               </Link>
               <a
-                href="https://wa.me/919246270133"
+                href={`https://wa.me/91${site.contact.phones?.[1]}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-medium border-2 transition-all hover:opacity-80"

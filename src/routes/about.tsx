@@ -5,7 +5,7 @@ import vandana from "@/assets/team/vandana-rao.jpg";
 import about from "@/assets/about-studio.jpg";
 import blueprint from "@/assets/blueprint-bg.jpg";
 import { ArrowUpRight, Award, BookOpen, Building2, Users, CheckCircle2 } from "lucide-react";
-import { architects, builders, timeline } from "#/assets/data/site";
+import { architects, builders, site, timeline } from "#/assets/data/site";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -370,7 +370,7 @@ function CTA() {
               Book Consultation <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://wa.me/919246270133"
+              href={`https://wa.me/91${site.contact.phones?.[1]}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm border-2 transition hover:opacity-80"

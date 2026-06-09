@@ -222,7 +222,7 @@ export function Footer() {
 
           {/* WhatsApp quick link */}
           <a
-            href="https://wa.me/919246270133"
+            href={`https://wa.me/91${site.contact.phones?.[1]}`}
             target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-medium transition hover:opacity-90"
             style={{ background: "#FEFAF7", color: "#154D57" }}

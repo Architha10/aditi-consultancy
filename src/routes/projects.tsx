@@ -8,6 +8,7 @@ import blueprint from "@/assets/blueprint-bg.jpg";
 import type { Project } from "@/types/project";
 import { cats, projectsData, statusStyle, type Cat, type Status } from "#/assets/data/project-data";
 import { ProjectDetailModal } from "#/components/projects/project-detail-modal";
+import { site } from "#/assets/data/site";
 
 /* ─── PALETTE
    cream:  #FEFAF7  |  teal: #154D57
@@ -111,37 +112,6 @@ function Hero() {
             </div>
           </div>
         </div>
-        {/* Stats */}
-        {/* <div
-          className="mt-16 pt-8 border-t grid grid-cols-2 sm:grid-cols-4 gap-6"
-          style={{ borderColor: "#e4dbd2" }}
-        >
-          {[
-            { v: String(completedCount) + "+", l: "Completed" },
-            { v: String(ongoingCount),          l: "On-Going" },
-            { v: upcomingPipeline.length + "+", l: "Upcoming" },
-            { v: "5",                           l: "Sectors" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div
-                style={{
-                  fontFamily: "Georgia,serif",
-                  fontSize: "2.8rem",
-                  color: "#154D57",
-                  lineHeight: 1,
-                }}
-              >
-                {s.v}
-              </div>
-              <div
-                className="mt-1.5 text-[10px] uppercase tracking-[0.24em]"
-                style={{ color: "#B7A08B" }}
-              >
-                {s.l}
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </section>
   );
@@ -521,7 +491,7 @@ function CTA() {
               Book Consultation <ArrowUpRight size={15} />
             </Link>
             <a
-              href="https://wa.me/919246270133"
+              href={`https://wa.me/91${site.contact.phones?.[1]}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm border-2 transition hover:opacity-80"
